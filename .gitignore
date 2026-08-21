@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+
+# Phase 9 generated
+data/
+backups/
+playwright-report/
+test-results/

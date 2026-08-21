@@ -1,0 +1,5 @@
+import type { AnswerValue, Question } from '../exam/exam.types';
+import { isAnswerCorrect, normalizeText } from '../exam/answer.scoring';
+import type { PracticeResult } from './practice.types';
+export { isAnswerCorrect, normalizeText };
+export function calculatePracticeScore(questions:Question[],answers:Record<string,AnswerValue>,startedAt:number,finishedAt:number):PracticeResult{let correctQuestions=0,wrongQuestions=0,score=0;for(const question of questions){const answer=answers[question.id];if(!answer)continue;if(isAnswerCorrect(question,answer)){correctQuestions++;score+=question.points>0?question.points:1;}else wrongQuestions++;}const totalQuestions=questions.length;const answeredQuestions=correctQuestions+wrongQuestions;return {totalQuestions,answeredQuestions,correctQuestions,wrongQuestions,unansweredQuestions:totalQuestions-answeredQuestions,score,percentage:totalQuestions===0?0:correctQuestions/totalQuestions*100,duration:Math.max(0,Math.floor((finishedAt-startedAt)/1000)),startedAt,finishedAt,answers};}

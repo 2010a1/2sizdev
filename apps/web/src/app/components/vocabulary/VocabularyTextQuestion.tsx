@@ -1,0 +1,2 @@
+import type { VocabQuestion } from "@exam/shared-types";
+export function VocabularyTextQuestion({question,value,onChange}:{question:VocabQuestion;value:string;onChange:(v:string)=>void}){return <div className="space-y-3"><h2 className="text-xl font-semibold">{question.prompt}</h2><input className="input text-lg" value={value} onChange={e=>onChange(e.target.value)} placeholder="Nhập câu trả lời..." autoComplete="off" /></div>}

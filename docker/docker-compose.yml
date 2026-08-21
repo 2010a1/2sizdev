@@ -1,0 +1,50 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: Dockerfile.api
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: file:/data/exam-platform.db
+      STORAGE_DRIVER: sqlite
+      SHARED_EXAMS_DIR: /data/shared-exams
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost}
+      REQUEST_TIMEOUT_MS: ${REQUEST_TIMEOUT_MS:-10000}
+      RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-60}
+      SHARE_LOOKUP_RATE_LIMIT_PER_MINUTE: ${SHARE_LOOKUP_RATE_LIMIT_PER_MINUTE:-60}
+      SHARE_EXPIRY_DEFAULT: ${SHARE_EXPIRY_DEFAULT:-7d}
+      # nginx (the `web` service) is the only trusted hop in front of this API,
+      # so trust exactly 1 proxy hop for req.ip resolution. See resolveTrustProxy()
+      # in apps/api/src/app.ts -- this must stay paired with NOT publishing this
+      # service's port to the host (see `expose` below), otherwise clients could
+      # bypass nginx and spoof X-Forwarded-For directly against the trusted API.
+      TRUST_PROXY: ${TRUST_PROXY:-true}
+    volumes:
+      - exam_data:/data
+    # Intentionally NOT `ports:` -- publishing 3000 to the host would let clients
+    # hit the API directly, bypassing nginx entirely. With TRUST_PROXY set above,
+    # a direct connection would also let an attacker set X-Forwarded-For as their
+    # own single trusted hop and spoof req.ip for rate limits/audit logs. `expose`
+    # only makes the port reachable from other containers on the compose network
+    # (i.e. the `web` nginx service), which is all that's required.
+    expose:
+      - "3000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  web:
+    build:
+      context: ..
+      dockerfile: Dockerfile.web
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "80:8080"
+
+volumes:
+  exam_data:

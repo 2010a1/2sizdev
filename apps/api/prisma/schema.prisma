@@ -1,0 +1,138 @@
+// Runtime persistence is managed by apps/api/src/db/sqlite.ts. This schema mirrors
+// the durable SQLite tables for documentation/tooling; Prisma client generation is
+// intentionally not used by the API.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String    @id
+  username       String    @unique
+  email          String?   @unique
+  passwordHash   String    @map("password_hash")
+  role           String    @default("USER")
+  status         String    @default("ACTIVE")
+  failedAttempts Int       @default(0) @map("failed_attempts")
+  lockedUntil    Int?      @map("locked_until")
+  createdAt      Int       @map("created_at")
+  lastLoginAt    Int?      @map("last_login_at")
+  suspendedUntil Int?      @map("suspended_until")
+  mustChangePassword Boolean @default(false) @map("must_change_password")
+  deletedAt      Int?      @map("deleted_at")
+  sessions       Session[]
+
+  @@index([createdAt])
+  @@map("users")
+}
+
+model Session {
+  id         String @id
+  userId     String @map("user_id")
+  tokenHash  String @unique @map("token_hash")
+  expiresAt  Int    @map("expires_at")
+  createdAt  Int    @map("created_at")
+  lastSeenAt Int    @map("last_seen_at")
+  userAgent  String? @map("user_agent")
+  ip         String?
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model SecurityEvent {
+  id        String @id
+  userId    String? @map("user_id")
+  username  String?
+  action    String
+  severity  String
+  ip        String?
+  userAgent String? @map("user_agent")
+  endpoint  String?
+  result    String?
+  metadata  String?
+  createdAt Int    @map("created_at")
+
+  @@index([createdAt])
+  @@index([action, createdAt])
+  @@index([userId, createdAt])
+  @@map("security_events")
+}
+
+model ExamActivity {
+  id        String @id
+  userId    String? @map("user_id")
+  profileId String? @map("profile_id")
+  kind      String
+  examId    String? @map("exam_id")
+  createdAt Int    @map("created_at")
+
+  @@index([createdAt])
+  @@index([userId, createdAt])
+  @@map("exam_activity")
+}
+
+model OfficialExam {
+  id            String  @id
+  title         String
+  subject       String
+  grade         Int?
+  version       Int
+  contentHash   String  @map("content_hash")
+  packageBase64 String  @map("package_base64")
+  questionCount Int     @map("question_count")
+  metadata      String?
+  createdAt     Int     @map("created_at")
+  updatedAt     Int     @map("updated_at")
+  publishedAt   Int?    @map("published_at")
+  deletedAt     Int?    @map("deleted_at")
+
+  @@index([subject, grade])
+  @@index([updatedAt])
+  @@map("official_exams")
+}
+
+model SecurityAlert {
+  id String @id
+  type String
+  severity String
+  status String @default("NEW")
+  userId String? @map("user_id")
+  ip String?
+  reason String
+  requestCount Int @map("request_count")
+  metadata String?
+  createdAt Int @map("created_at")
+  updatedAt Int @map("updated_at")
+  @@index([createdAt])
+  @@index([status, updatedAt])
+  @@map("security_alerts")
+}
+
+model AuditLog {
+  id String @id
+  adminId String @map("admin_id")
+  action String
+  targetId String? @map("target_id")
+  ip String?
+  userAgent String? @map("user_agent")
+  result String
+  metadata String?
+  createdAt Int @map("created_at")
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+model FeatureFlag {
+  key String @id
+  enabled Boolean @default(true)
+  updatedAt Int @map("updated_at")
+  updatedBy String? @map("updated_by")
+  @@map("feature_flags")
+}

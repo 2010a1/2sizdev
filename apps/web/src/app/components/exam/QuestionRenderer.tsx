@@ -1,0 +1,11 @@
+import type { AnswerValue, Question } from '../../../domain/exam/exam.types';
+import { MathText } from './MathText';
+import { RichContent } from './RichContent';
+export function QuestionRenderer({question,answer,onAnswer}:{question:Question;answer?:AnswerValue;onAnswer:(a:AnswerValue)=>void}){
+ if(question.type==='ABCD') return <ABCDRenderer question={question} answer={answer} onAnswer={onAnswer}/>;
+ if(question.type==='TRUE_FALSE') return <TrueFalseRenderer question={question} answer={answer} onAnswer={onAnswer}/>;
+ return <ShortRenderer answer={answer} onAnswer={onAnswer}/>;
+}
+function ABCDRenderer({question,answer,onAnswer}:{question:Extract<Question,{type:'ABCD'}>;answer?:AnswerValue;onAnswer:(a:AnswerValue)=>void}){return <div className="space-y-2">{question.options.map((o,i)=><label key={o.id} className="flex gap-3 items-center card cursor-pointer"><input type="radio" checked={answer?.type==='ABCD'&&answer.selectedOptionId===o.id} onChange={()=>onAnswer({type:'ABCD',selectedOptionId:o.id})}/><span className="font-semibold">{String.fromCharCode(65+i)}.</span><div className="min-w-0 flex-1"><RichContent html={o.text} /></div></label>)}</div>}
+function TrueFalseRenderer({answer,onAnswer}:{question:Extract<Question,{type:'TRUE_FALSE'}>;answer?:AnswerValue;onAnswer:(a:AnswerValue)=>void}){return <div className="grid grid-cols-2 gap-3"><button type="button" className={answer?.type==='TRUE_FALSE'&&answer.selectedAnswer===true?'btn-primary':'btn-secondary'} onClick={()=>onAnswer({type:'TRUE_FALSE',selectedAnswer:true})}>ĐÚNG</button><button type="button" className={answer?.type==='TRUE_FALSE'&&answer.selectedAnswer===false?'btn-primary':'btn-secondary'} onClick={()=>onAnswer({type:'TRUE_FALSE',selectedAnswer:false})}>SAI</button></div>}
+function ShortRenderer({answer,onAnswer}:{answer?:AnswerValue;onAnswer:(a:AnswerValue)=>void}){return <input className="input" value={answer?.type==='SHORT_ANSWER'?answer.text:''} onChange={e=>onAnswer({type:'SHORT_ANSWER',text:e.target.value})} placeholder="Nhập đáp án"/>}
