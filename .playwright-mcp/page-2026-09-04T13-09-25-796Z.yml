@@ -1,0 +1,223 @@
+- generic [ref=f2e3]:
+  - complementary [ref=f2e4]:
+    - link "Thi Thử Exam workspace" [ref=f2e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f2e10]:
+        - strong [ref=f2e11]: Thi Thử
+        - generic [ref=f2e12]: Exam workspace
+    - generic [ref=f2e13]: Không gian học tập
+    - navigation [ref=f2e14]:
+      - link "Dashboard" [ref=f2e15] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f2e21] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f2e25] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f2e30] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f2e37] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f2e42] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f2e47] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f2e51]:
+      - generic [ref=f2e54]:
+        - strong [ref=f2e55]: Online mode
+        - generic [ref=f2e56]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f2e57] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f2e59]:
+          - strong [ref=f2e60]: Test Flow
+          - generic [ref=f2e61]: Hồ sơ hiện tại
+  - generic [ref=f2e65]:
+    - banner [ref=f2e66]:
+      - button "Đóng sidebar" [ref=f2e68] [cursor=pointer]
+      - generic [ref=f2e70]:
+        - generic [ref=f2e71]: Đã kết nối
+        - button "Đăng xuất" [ref=f2e75] [cursor=pointer]
+        - link "Test Flow" [ref=f2e76] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f2e79]:
+      - generic [ref=f2e130]:
+        - generic [ref=f2e131]:
+          - navigation "Breadcrumb" [ref=f2e132]:
+            - list [ref=f2e133]:
+              - listitem [ref=f2e134]:
+                - link "Trang chủ" [ref=f2e135] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f2e136]:
+                - text: ›
+                - link "Kho đề" [ref=f2e137] [cursor=pointer]:
+                  - /url: /library
+              - listitem [ref=f2e138]:
+                - text: ›
+                - link "QA Công thức" [ref=f2e139] [cursor=pointer]:
+                  - /url: /library/exam_a069f362-2c87-403d-a1a3-3dee5a6163c8
+              - listitem [ref=f2e140]:
+                - text: ›
+                - generic [ref=f2e141]: Chỉnh sửa
+          - generic [ref=f2e142]: Đã lưu trên thiết bị
+        - generic [ref=f2e143]:
+          - textbox [ref=f2e144]: QA Công thức
+          - generic [ref=f2e145]:
+            - textbox "Môn" [ref=f2e146]: Toán
+            - spinbutton "Lớp" [ref=f2e147]
+            - spinbutton "Thời gian (phút)" [ref=f2e148]
+            - textbox "Mô tả" [ref=f2e149]
+        - generic [ref=f2e150]:
+          - generic [ref=f2e152]:
+            - generic [ref=f2e153]:
+              - strong [ref=f2e154]: Câu 1
+              - generic [ref=f2e155]:
+                - button "↑" [ref=f2e156] [cursor=pointer]
+                - button "↓" [ref=f2e157] [cursor=pointer]
+                - button "Xóa" [ref=f2e158] [cursor=pointer]
+            - combobox [ref=f2e159]:
+              - option "ABCD" [selected]
+              - option "TRUE / FALSE"
+              - option "SHORT ANSWER"
+            - generic [ref=f2e160]:
+              - generic [ref=f2e161]:
+                - generic [ref=f2e162]: Công thức
+                - button "a/b" [ref=f2e163] [cursor=pointer]
+                - button "√" [ref=f2e164] [cursor=pointer]
+                - button "x²" [ref=f2e165] [cursor=pointer]
+                - button "x₂" [ref=f2e166] [cursor=pointer]
+                - button "±" [ref=f2e167] [cursor=pointer]
+                - button "×" [ref=f2e168] [cursor=pointer]
+                - button "÷" [ref=f2e169] [cursor=pointer]
+                - button "≤" [ref=f2e170] [cursor=pointer]
+                - button "≥" [ref=f2e171] [cursor=pointer]
+                - button "≠" [ref=f2e172] [cursor=pointer]
+                - button "→" [ref=f2e173] [cursor=pointer]
+                - button "⇌" [ref=f2e174] [cursor=pointer]
+                - button "Thu gọn ký hiệu ▴" [ref=f2e289] [cursor=pointer]
+              - generic [ref=f2e290]:
+                - button "α" [ref=f2e291] [cursor=pointer]
+                - button "β" [ref=f2e292] [cursor=pointer]
+                - button "π" [ref=f2e293] [cursor=pointer]
+                - button "∞" [ref=f2e294] [cursor=pointer]
+                - button "°" [ref=f2e295] [cursor=pointer]
+                - button "∑" [ref=f2e296] [cursor=pointer]
+                - button "∫" [ref=f2e297] [cursor=pointer]
+                - button "∈" [ref=f2e298] [cursor=pointer]
+                - button "⊂" [ref=f2e299] [cursor=pointer]
+                - button "∪" [ref=f2e300] [cursor=pointer]
+                - button "∩" [ref=f2e301] [cursor=pointer]
+                - button "∅" [ref=f2e302] [cursor=pointer]
+                - button "∇" [ref=f2e303] [cursor=pointer]
+                - button "H₂O" [ref=f2e304] [cursor=pointer]
+                - button "Δ" [ref=f2e305] [cursor=pointer]
+                - button "θ" [ref=f2e306] [cursor=pointer]
+                - button "λ" [ref=f2e307] [cursor=pointer]
+                - button "μ" [ref=f2e308] [cursor=pointer]
+                - button "Ω" [ref=f2e309] [cursor=pointer]
+              - generic [active] [ref=f2e176]: Câu hỏi mới$x^2$
+              - generic [ref=f2e269]:
+                - generic [ref=f2e270]: "Xem trước hiển thị:"
+                - generic [ref=f2e271]:
+                  - text: Câu hỏi mới
+                  - generic [ref=f2e310]:
+                    - math [ref=f2e312]:
+                      - generic [ref=f2e315]:
+                        - generic [ref=f2e316]: x
+                        - generic [ref=f2e317]: "2"
+                    - generic [ref=f2e320]:
+                      - text: x
+                      - generic [ref=f2e321]: "2"
+            - generic [ref=f2e177]:
+              - text: Giải thích sẵn
+              - paragraph [ref=f2e178]: Nếu điền, khi người học làm sai hệ thống sẽ dùng giải thích này thay vì gọi AI.
+              - textbox "Giải thích vì sao đáp án đúng..." [ref=f2e179]
+            - generic [ref=f2e181]:
+              - generic [ref=f2e182]:
+                - generic [ref=f2e183]: Hình ảnh câu hỏi
+                - paragraph [ref=f2e184]: Ảnh được lưu trong máy để dùng offline và tự upload ImgBB khi có mạng.
+              - generic [ref=f2e185] [cursor=pointer]:
+                - button "Thêm hình ảnh" [ref=f2e186]
+                - text: Thêm hình ảnh
+            - spinbutton [ref=f2e187]: "1"
+            - generic [ref=f2e188]:
+              - generic [ref=f2e189]:
+                - generic [ref=f2e190]: A
+                - generic [ref=f2e191]:
+                  - generic [ref=f2e192]:
+                    - generic [ref=f2e193]: Công thức
+                    - button "a/b" [ref=f2e194] [cursor=pointer]
+                    - button "√" [ref=f2e195] [cursor=pointer]
+                    - button "x²" [ref=f2e196] [cursor=pointer]
+                    - button "x₂" [ref=f2e197] [cursor=pointer]
+                    - button "±" [ref=f2e198] [cursor=pointer]
+                    - button "×" [ref=f2e199] [cursor=pointer]
+                    - button "÷" [ref=f2e200] [cursor=pointer]
+                    - button "≤" [ref=f2e201] [cursor=pointer]
+                    - button "≥" [ref=f2e202] [cursor=pointer]
+                    - button "≠" [ref=f2e203] [cursor=pointer]
+                    - button "→" [ref=f2e204] [cursor=pointer]
+                    - button "⇌" [ref=f2e205] [cursor=pointer]
+                    - button "Thêm ký hiệu ▾" [ref=f2e206] [cursor=pointer]
+                  - generic [ref=f2e207]: Lựa chọn A
+                - button "Đúng" [ref=f2e208] [cursor=pointer]
+              - generic [ref=f2e209]:
+                - generic [ref=f2e210]: B
+                - generic [ref=f2e211]:
+                  - generic [ref=f2e212]:
+                    - generic [ref=f2e213]: Công thức
+                    - button "a/b" [ref=f2e214] [cursor=pointer]
+                    - button "√" [ref=f2e215] [cursor=pointer]
+                    - button "x²" [ref=f2e216] [cursor=pointer]
+                    - button "x₂" [ref=f2e217] [cursor=pointer]
+                    - button "±" [ref=f2e218] [cursor=pointer]
+                    - button "×" [ref=f2e219] [cursor=pointer]
+                    - button "÷" [ref=f2e220] [cursor=pointer]
+                    - button "≤" [ref=f2e221] [cursor=pointer]
+                    - button "≥" [ref=f2e222] [cursor=pointer]
+                    - button "≠" [ref=f2e223] [cursor=pointer]
+                    - button "→" [ref=f2e224] [cursor=pointer]
+                    - button "⇌" [ref=f2e225] [cursor=pointer]
+                    - button "Thêm ký hiệu ▾" [ref=f2e226] [cursor=pointer]
+                  - generic [ref=f2e227]: Lựa chọn B
+                - button "Đúng" [ref=f2e228] [cursor=pointer]
+              - generic [ref=f2e229]:
+                - generic [ref=f2e230]: C
+                - generic [ref=f2e231]:
+                  - generic [ref=f2e232]:
+                    - generic [ref=f2e233]: Công thức
+                    - button "a/b" [ref=f2e234] [cursor=pointer]
+                    - button "√" [ref=f2e235] [cursor=pointer]
+                    - button "x²" [ref=f2e236] [cursor=pointer]
+                    - button "x₂" [ref=f2e237] [cursor=pointer]
+                    - button "±" [ref=f2e238] [cursor=pointer]
+                    - button "×" [ref=f2e239] [cursor=pointer]
+                    - button "÷" [ref=f2e240] [cursor=pointer]
+                    - button "≤" [ref=f2e241] [cursor=pointer]
+                    - button "≥" [ref=f2e242] [cursor=pointer]
+                    - button "≠" [ref=f2e243] [cursor=pointer]
+                    - button "→" [ref=f2e244] [cursor=pointer]
+                    - button "⇌" [ref=f2e245] [cursor=pointer]
+                    - button "Thêm ký hiệu ▾" [ref=f2e246] [cursor=pointer]
+                  - generic [ref=f2e247]: Lựa chọn C
+                - button "Đúng" [ref=f2e248] [cursor=pointer]
+              - generic [ref=f2e249]:
+                - generic [ref=f2e250]: D
+                - generic [ref=f2e251]:
+                  - generic [ref=f2e252]:
+                    - generic [ref=f2e253]: Công thức
+                    - button "a/b" [ref=f2e254] [cursor=pointer]
+                    - button "√" [ref=f2e255] [cursor=pointer]
+                    - button "x²" [ref=f2e256] [cursor=pointer]
+                    - button "x₂" [ref=f2e257] [cursor=pointer]
+                    - button "±" [ref=f2e258] [cursor=pointer]
+                    - button "×" [ref=f2e259] [cursor=pointer]
+                    - button "÷" [ref=f2e260] [cursor=pointer]
+                    - button "≤" [ref=f2e261] [cursor=pointer]
+                    - button "≥" [ref=f2e262] [cursor=pointer]
+                    - button "≠" [ref=f2e263] [cursor=pointer]
+                    - button "→" [ref=f2e264] [cursor=pointer]
+                    - button "⇌" [ref=f2e265] [cursor=pointer]
+                    - button "Thêm ký hiệu ▾" [ref=f2e266] [cursor=pointer]
+                  - generic [ref=f2e267]: Lựa chọn D
+                - button "Đúng" [ref=f2e268] [cursor=pointer]
+          - button "+ Thêm câu" [ref=f2e151] [cursor=pointer]
+    - button "Mở AI" [ref=f2e124] [cursor=pointer]

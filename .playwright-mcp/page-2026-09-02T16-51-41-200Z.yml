@@ -1,0 +1,88 @@
+- generic [ref=f2e15]:
+  - complementary [ref=f2e16]:
+    - link "Thi Thử Exam workspace" [ref=f2e17] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f2e22]:
+        - strong [ref=f2e23]: Thi Thử
+        - generic [ref=f2e24]: Exam workspace
+    - generic [ref=f2e25]: Không gian học tập
+    - navigation [ref=f2e26]:
+      - link "Dashboard" [ref=f2e27] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f2e33] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f2e37] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f2e42] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f2e49] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f2e54] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f2e59] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f2e63]:
+      - generic [ref=f2e66]:
+        - strong [ref=f2e67]: Online mode
+        - generic [ref=f2e68]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f2e69] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f2e71]:
+          - strong [ref=f2e72]: Test Flow
+          - generic [ref=f2e73]: Hồ sơ hiện tại
+  - generic [ref=f2e77]:
+    - banner [ref=f2e78]:
+      - button "Đóng sidebar" [ref=f2e80] [cursor=pointer]
+      - generic [ref=f2e82]:
+        - generic [ref=f2e83]: Đã kết nối
+        - button "Đăng xuất" [ref=f2e87] [cursor=pointer]
+        - link "Test Flow" [ref=f2e88] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f2e91]:
+      - generic [ref=f2e92]:
+        - generic [ref=f2e93]:
+          - generic [ref=f2e94]:
+            - text: THƯ VIỆN OFFLINE-FIRST
+            - heading "Kho đề của bạn" [level=1] [ref=f2e95]
+            - paragraph [ref=f2e96]: Tạo, import, chia sẻ và làm bài ngay cả khi không có Internet.
+          - generic [ref=f2e97]:
+            - button "Import .exam" [ref=f2e98] [cursor=pointer]
+            - link "Tạo đề mới" [ref=f2e101] [cursor=pointer]:
+              - /url: /library/new
+        - generic [ref=f2e103]:
+          - generic [ref=f2e108]:
+            - strong [ref=f2e109]: "0"
+            - generic [ref=f2e110]: Tổng số đề
+          - generic [ref=f2e115]:
+            - strong [ref=f2e116]: "0"
+            - generic [ref=f2e117]: Đề yêu thích
+          - generic [ref=f2e122]:
+            - strong [ref=f2e123]: "0"
+            - generic [ref=f2e124]: Tổng câu hỏi
+        - generic [ref=f2e125]:
+          - generic [ref=f2e132]:
+            - strong [ref=f2e133]: Nhận bằng mã chia sẻ
+            - generic [ref=f2e134]: Nhập mã 6–10 ký tự để nhận đề thi hoặc bộ từ vào workspace offline.
+          - generic [ref=f2e135]:
+            - textbox "A7K92X" [ref=f2e136]
+            - button "Tiếp tục" [disabled]
+        - generic [ref=f2e137]:
+          - textbox "Tìm đề" [ref=f2e142]:
+            - /placeholder: Tìm theo tên hoặc môn học…
+          - generic [ref=f2e143]:
+            - combobox [ref=f2e144]:
+              - option "Tất cả" [selected]
+              - option "Đề của tôi"
+              - option "Đề gốc"
+              - option "Đề đã chia sẻ"
+              - option "Yêu thích"
+            - combobox [ref=f2e145]:
+              - option "Mới cập nhật" [selected]
+              - option "Tên A–Z"
+              - option "Yêu thích"
+        - generic [ref=f2e146]:
+          - heading "Thư viện đang trống" [level=2] [ref=f2e150]
+          - paragraph [ref=f2e151]: Tạo đề đầu tiên hoặc import một file .exam để bắt đầu.
+          - link "Tạo đề đầu tiên" [ref=f2e152] [cursor=pointer]:
+            - /url: /library/new
+    - button "Mở AI" [ref=f2e155] [cursor=pointer]

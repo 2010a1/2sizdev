@@ -1,0 +1,91 @@
+- generic [ref=f9e165]:
+  - complementary [ref=f9e166]:
+    - link "Thi Thử Exam workspace" [ref=f9e167] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f9e172]:
+        - strong [ref=f9e173]: Thi Thử
+        - generic [ref=f9e174]: Exam workspace
+    - generic [ref=f9e175]: Không gian học tập
+    - navigation [ref=f9e176]:
+      - link "Dashboard" [ref=f9e177] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f9e183] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f9e187] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f9e192] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f9e199] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f9e204] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f9e209] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f9e213]:
+      - generic [ref=f9e216]:
+        - strong [ref=f9e217]: Online mode
+        - generic [ref=f9e218]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f9e219] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f9e221]:
+          - strong [ref=f9e222]: Test Flow
+          - generic [ref=f9e223]: Hồ sơ hiện tại
+  - generic [ref=f9e227]:
+    - banner [ref=f9e228]:
+      - button "Đóng sidebar" [ref=f9e230] [cursor=pointer]
+      - generic [ref=f9e232]:
+        - generic [ref=f9e233]: Đã kết nối
+        - button "Đăng xuất" [ref=f9e237] [cursor=pointer]
+        - link "Test Flow" [ref=f9e238] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f9e241]:
+      - generic [ref=f9e242]:
+        - generic [ref=f9e243]:
+          - generic [ref=f9e244]:
+            - text: THƯ VIỆN OFFLINE-FIRST
+            - heading "Kho đề của bạn" [level=1] [ref=f9e245]
+            - paragraph [ref=f9e246]: Tạo, import, chia sẻ và làm bài ngay cả khi không có Internet.
+          - generic [ref=f9e247]:
+            - button "Import .exam" [ref=f9e248] [cursor=pointer]
+            - link "Tạo đề mới" [ref=f9e251] [cursor=pointer]:
+              - /url: /library/new
+        - generic [ref=f9e253]:
+          - generic [ref=f9e258]:
+            - strong [ref=f9e259]: "1"
+            - generic [ref=f9e260]: Tổng số đề
+          - generic [ref=f9e265]:
+            - strong [ref=f9e266]: "0"
+            - generic [ref=f9e267]: Đề yêu thích
+          - generic [ref=f9e272]:
+            - strong [ref=f9e273]: "1"
+            - generic [ref=f9e274]: Tổng câu hỏi
+        - generic [ref=f9e275]:
+          - generic [ref=f9e282]:
+            - strong [ref=f9e283]: Nhận bằng mã chia sẻ
+            - generic [ref=f9e284]: Nhập mã 6–10 ký tự để nhận đề thi hoặc bộ từ vào workspace offline.
+          - generic [ref=f9e285]:
+            - textbox "A7K92X" [ref=f9e286]
+            - button "Tiếp tục" [disabled]
+        - generic [ref=f9e287]:
+          - textbox "Tìm đề" [ref=f9e292]:
+            - /placeholder: Tìm theo tên hoặc môn học…
+          - generic [ref=f9e293]:
+            - combobox [ref=f9e294]:
+              - option "Tất cả" [selected]
+              - option "Đề của tôi"
+              - option "Đề gốc"
+              - option "Đề đã chia sẻ"
+              - option "Yêu thích"
+            - combobox [ref=f9e295]:
+              - option "Mới cập nhật" [selected]
+              - option "Tên A–Z"
+              - option "Yêu thích"
+        - link "Cá nhân Đề mẫu — Lịch sử Việt Nam Lịch sử · Lớp 12 1 câu 30 phút" [ref=f9e297] [cursor=pointer]:
+          - /url: /library/exam_78b1955c-69fc-42aa-afd5-58e8c40440de
+          - generic [ref=f9e298]: Cá nhân
+          - heading "Đề mẫu — Lịch sử Việt Nam" [level=2] [ref=f9e300]
+          - paragraph [ref=f9e301]: Lịch sử · Lớp 12
+          - generic [ref=f9e302]:
+            - generic [ref=f9e303]: 1 câu
+            - generic [ref=f9e306]: 30 phút
+    - button "Mở AI" [ref=f9e313] [cursor=pointer]

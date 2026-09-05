@@ -1,0 +1,14 @@
+- generic [ref=f2e4]:
+  - generic [ref=f2e5]:
+    - text: TÀI KHOẢN
+    - heading "Tạo tài khoản" [level=1] [ref=f2e6]
+    - paragraph [ref=f2e7]: Chỉ cần tên, username và mật khẩu. Không cần Gmail/email.
+  - textbox "Tên hiển thị" [active] [ref=f2e8]
+  - textbox "Username" [ref=f2e9]
+  - textbox "Mật khẩu (ít nhất 10 ký tự)" [ref=f2e10]
+  - textbox "Nhập lại mật khẩu" [ref=f2e11]
+  - button "Đăng ký & vào học" [ref=f2e12] [cursor=pointer]
+  - paragraph [ref=f2e13]:
+    - text: Đã có tài khoản?
+    - link "Đăng nhập" [ref=f2e14] [cursor=pointer]:
+      - /url: /login

@@ -1,0 +1,129 @@
+- generic [ref=f6e4]:
+  - complementary [ref=f6e5]:
+    - link "Thi Thử Exam workspace" [ref=f6e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f6e11]:
+        - strong [ref=f6e12]: Thi Thử
+        - generic [ref=f6e13]: Exam workspace
+    - generic [ref=f6e14]: Không gian học tập
+    - navigation [ref=f6e15]:
+      - link "Dashboard" [ref=f6e16] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f6e22] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f6e26] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f6e31] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f6e38] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f6e43] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f6e48] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f6e52]:
+      - generic [ref=f6e55]:
+        - strong [ref=f6e56]: Online mode
+        - generic [ref=f6e57]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f6e58] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f6e60]:
+          - strong [ref=f6e61]: Test Flow
+          - generic [ref=f6e62]: Hồ sơ hiện tại
+  - generic [ref=f6e66]:
+    - banner [ref=f6e67]:
+      - button "Đóng sidebar" [ref=f6e69] [cursor=pointer]
+      - generic [ref=f6e71]:
+        - generic [ref=f6e72]: Đã kết nối
+        - button "Đăng xuất" [ref=f6e76] [cursor=pointer]
+        - link "Test Flow" [ref=f6e77] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f6e80]:
+      - generic [ref=f6e81]:
+        - generic [ref=f6e83]:
+          - text: TÙY CHỈNH WORKSPACE
+          - heading "Cài đặt" [level=1] [ref=f6e84]
+          - paragraph [ref=f6e85]: Chỉnh giao diện và cách hiển thị mà không thay đổi nội dung hay font gốc của đề thi.
+        - generic [ref=f6e86]:
+          - link "Tài khoản & hồ sơ" [ref=f6e87] [cursor=pointer]:
+            - /url: /account
+          - link "Cài đặt" [ref=f6e91] [cursor=pointer]:
+            - /url: /account/settings
+          - link "Keybind" [ref=f6e95] [cursor=pointer]:
+            - /url: /account/keybind
+        - generic [ref=f6e99]:
+          - generic [ref=f6e101]:
+            - text: MÀU GIAO DIỆN
+            - heading "Accent color" [level=2] [ref=f6e102]
+            - paragraph [ref=f6e103]: Màu mặc định là Cyan. Màu chỉ thay đổi UI, không đổi dữ liệu đề.
+          - generic [ref=f6e105]:
+            - button "Cyan Đang dùng" [active] [ref=f6e181] [cursor=pointer]:
+              - generic [ref=f6e108]:
+                - text: Cyan
+                - generic [ref=f6e109]: Đang dùng
+            - button "Blue Chọn" [ref=f6e110] [cursor=pointer]:
+              - generic [ref=f6e112]:
+                - text: Blue
+                - generic [ref=f6e113]: Chọn
+            - button "Violet Chọn" [ref=f6e114] [cursor=pointer]:
+              - generic [ref=f6e116]:
+                - text: Violet
+                - generic [ref=f6e117]: Chọn
+            - button "Emerald Chọn" [ref=f6e118] [cursor=pointer]:
+              - generic [ref=f6e120]:
+                - text: Emerald
+                - generic [ref=f6e121]: Chọn
+            - button "Orange Chọn" [ref=f6e122] [cursor=pointer]:
+              - generic [ref=f6e124]:
+                - text: Orange
+                - generic [ref=f6e125]: Chọn
+            - button "Rose Chọn" [ref=f6e182] [cursor=pointer]:
+              - generic [ref=f6e128]:
+                - text: Rose
+                - generic [ref=f6e129]: Chọn
+        - generic [ref=f6e130]:
+          - generic [ref=f6e131]:
+            - generic [ref=f6e132]:
+              - text: CHẾ ĐỘ
+              - heading "Giao diện sáng / tối" [level=2] [ref=f6e133]
+              - paragraph [ref=f6e134]: Dark mode dùng nền Deep Navy.
+            - button [ref=f6e135] [cursor=pointer]
+          - generic [ref=f6e137]:
+            - button "☀️ Light Nền sáng sạch" [ref=f6e138] [cursor=pointer]:
+              - text: ☀️
+              - generic [ref=f6e139]: Light
+              - generic [ref=f6e140]: Nền sáng sạch
+            - button "🌙 Dark Deep Navy" [ref=f6e141] [cursor=pointer]:
+              - text: 🌙
+              - generic [ref=f6e142]: Dark
+              - generic [ref=f6e143]: Deep Navy
+        - generic [ref=f6e144]:
+          - generic [ref=f6e145]:
+            - text: KHO ĐỀ
+            - heading "Dạng hiển thị đề thi" [level=2] [ref=f6e146]
+            - paragraph [ref=f6e147]: Block hiển thị dạng card; List gọn và xem được nhiều đề hơn.
+          - generic [ref=f6e148]:
+            - button [ref=f6e149] [cursor=pointer]
+            - button [ref=f6e154] [cursor=pointer]
+        - generic [ref=f6e159]:
+          - generic [ref=f6e160]:
+            - text: PHÔNG CHỮ
+            - heading "Font giao diện" [level=2] [ref=f6e161]
+            - paragraph [ref=f6e162]:
+              - text: Chỉ áp dụng cho UI.
+              - strong [ref=f6e163]: Đề thi và nội dung toán / hóa giữ font gốc
+              - text: để tránh lỗi ký hiệu.
+          - generic [ref=f6e164]:
+            - button "Inter / SF-like Gọn, hiện đại, dễ đọc Aa 123 H₂O ∑x²" [ref=f6e165] [cursor=pointer]:
+              - text: Inter / SF-like
+              - generic [ref=f6e166]: Gọn, hiện đại, dễ đọc
+              - generic [ref=f6e167]: Aa 123 H₂O ∑x²
+            - button "System Theo font hệ điều hành Aa 123 H₂O ∑x²" [ref=f6e168] [cursor=pointer]:
+              - text: System
+              - generic [ref=f6e169]: Theo font hệ điều hành
+              - generic [ref=f6e170]: Aa 123 H₂O ∑x²
+            - button "Rounded Mềm và thân thiện Aa 123 H₂O ∑x²" [ref=f6e171] [cursor=pointer]:
+              - text: Rounded
+              - generic [ref=f6e172]: Mềm và thân thiện
+              - generic [ref=f6e173]: Aa 123 H₂O ∑x²
+    - button "Mở AI" [ref=f6e175] [cursor=pointer]

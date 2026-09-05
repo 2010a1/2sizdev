@@ -1,0 +1,12 @@
+{
+  "name": "@exam/exam-format",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@exam/schemas": "workspace:*",
+    "jszip": "^3.10.1"
+  }
+}

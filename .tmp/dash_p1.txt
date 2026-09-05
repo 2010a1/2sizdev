@@ -1,0 +1,57 @@
+import { useEffect, useMemo, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AppIcon } from "../components/AppIcon";
+import { Skeleton } from "../components/Skeleton";
+import { examService } from "../../domain/exam/exam.service";
+import { attemptService } from "../../domain/exam/attempt.service";
+import type { Exam } from "../../domain/exam/exam.types";
+import { authApi } from "../../infrastructure/api/auth";
+import { useAuthStore } from "../../state/authStore";
+import { useProfileStore } from "../../state/profileStore";
+import { useOnlineStatus } from "../../hooks/useOnlineStatus";
+
+/** One in-progress practice attempt to offer as "continue where you left off". */
+type Continuation = { exam: Exam; questionIndex: number };
+
+export function DashboardPage() {
+  const user = useAuthStore(s => s.user);
+  const online = useOnlineStatus();
+  const nav = useNavigate();
+  const profile = useProfileStore(s => s.activeProfile);
+  const [exams, setExams] = useState<Exam[]>([]);
+  const [stats, setStats] = useState({ shares: 0, exams: 0, attempts: 0 });
+  const [continueAt, setContinueAt] = useState<Continuation | undefined>();
+  const [shareCode, setShareCode] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const [loaded, setLoaded] = useState(false);
+
+  const load = async () => {
+    const local = await examService.listExams().catch(() => [] as Exam[]);
+    setExams(local);
+    setLoaded(true);
+    // Cheap indexed lookups on the most recent exams; no session rebuild here.
+    for (const exam of [...local].sort((a, b) => b.updatedAt - a.updatedAt).slice(0, 6)) {
+      const attempt = profile ? await attemptService.resumeAttempt(profile.id, exam.id, "practice").catch(() => undefined) : undefined;
+      if (attempt) { setContinueAt({ exam, questionIndex: attempt.currentQuestionIndex ?? 0 }); break; }
+    }
+    if (user) {
+      try {
+        const result = await authApi.account();
+        const s = result.stats ?? {};
+        setStats({ shares: Number(s.shares ?? 0), exams: Number(s.exams ?? 0), attempts: Number(s.practice ?? 0) + Number(s.tournament ?? 0) });
+      } catch {
+        // Dashboard remains useful offline; local exam data is still rendered.
+      }
+    }
+  };
+
+  useEffect(() => { void load(); }, [user?.id]);
+
+  const recent = useMemo(() => [...exams].sort((a, b) => b.updatedAt - a.updatedAt).slice(0, 6), [exams]);
+
+  function receiveSharedContent() {
+    if (shareCode.length < 6) return;
+    setError("");
+    nav(`/share/${shareCode}`);
+  }

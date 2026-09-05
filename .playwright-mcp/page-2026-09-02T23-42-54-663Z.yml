@@ -1,0 +1,105 @@
+- generic [ref=f7e4]:
+  - complementary [ref=f7e5]:
+    - link "Thi Thử Exam workspace" [ref=f7e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f7e11]:
+        - strong [ref=f7e12]: Thi Thử
+        - generic [ref=f7e13]: Exam workspace
+    - generic [ref=f7e14]: Không gian học tập
+    - navigation [ref=f7e15]:
+      - link "Dashboard" [ref=f7e16] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f7e22] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f7e26] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f7e31] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f7e38] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f7e43] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f7e48] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f7e52]:
+      - generic [ref=f7e55]:
+        - strong [ref=f7e56]: Online mode
+        - generic [ref=f7e57]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f7e58] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f7e60]:
+          - strong [ref=f7e61]: Test Flow
+          - generic [ref=f7e62]: Hồ sơ hiện tại
+  - generic [ref=f7e66]:
+    - banner [ref=f7e67]:
+      - button "Đóng sidebar" [ref=f7e69] [cursor=pointer]
+      - generic [ref=f7e71]:
+        - generic [ref=f7e72]: Đã kết nối
+        - button "Đăng xuất" [ref=f7e76] [cursor=pointer]
+        - link "Test Flow" [ref=f7e77] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f7e80]:
+      - generic [ref=f7e156]:
+        - link "Quay lại Kho đề" [ref=f7e157] [cursor=pointer]:
+          - /url: /library
+        - generic [ref=f7e160]:
+          - generic [ref=f7e161]:
+            - generic [ref=f7e162]:
+              - generic [ref=f7e163]:
+                - generic [ref=f7e164]: Cá nhân
+                - generic [ref=f7e165]: v1
+              - heading "Đề mẫu — Lịch sử Việt Nam" [level=1] [ref=f7e166]
+              - paragraph [ref=f7e167]: Lịch sử · Lớp 12
+            - button "Yêu thích" [ref=f7e168] [cursor=pointer]
+          - generic [ref=f7e171]:
+            - generic [ref=f7e172]:
+              - generic [ref=f7e173]: Câu hỏi
+              - strong [ref=f7e176]: 1 câu
+            - generic [ref=f7e177]:
+              - generic [ref=f7e178]: Thời gian
+              - strong [ref=f7e182]: 30 phút
+            - generic [ref=f7e183]:
+              - generic [ref=f7e184]: Nguồn
+              - strong [ref=f7e187]: Cá nhân
+            - generic [ref=f7e188]:
+              - generic [ref=f7e189]: Trạng thái
+              - strong [ref=f7e192]: Offline sẵn sàng
+          - paragraph [ref=f7e193]: Đề mẫu để thử tạo và chỉnh sửa.
+          - generic [ref=f7e194]:
+            - generic [ref=f7e195]:
+              - paragraph [ref=f7e196]: BẮT ĐẦU BÀI THI
+              - heading "Chọn chế độ" [level=2] [ref=f7e197]
+              - paragraph [ref=f7e198]: Chọn cách bạn muốn làm đề. Không còn phải đi qua menu Luyện tập hoặc Thi đấu.
+            - generic [ref=f7e199]:
+              - link "Luyện tập Làm toàn bộ đề, có thể quay lại và sửa đáp án. →" [ref=f7e200] [cursor=pointer]:
+                - /url: /practice/exam_78b1955c-69fc-42aa-afd5-58e8c40440de
+                - generic [ref=f7e204]:
+                  - strong [ref=f7e205]: Luyện tập
+                  - generic [ref=f7e206]: Làm toàn bộ đề, có thể quay lại và sửa đáp án.
+                - generic [ref=f7e207]: →
+              - link "Thi đấu Chế độ thi nhanh, trả lời sai có thể kết thúc lượt. →" [ref=f7e208] [cursor=pointer]:
+                - /url: /tournament/exam_78b1955c-69fc-42aa-afd5-58e8c40440de
+                - generic [ref=f7e214]:
+                  - strong [ref=f7e215]: Thi đấu
+                  - generic [ref=f7e216]: Chế độ thi nhanh, trả lời sai có thể kết thúc lượt.
+                - generic [ref=f7e217]: →
+          - generic [ref=f7e218]:
+            - link "Sửa đề" [ref=f7e219] [cursor=pointer]:
+              - /url: /library/exam_78b1955c-69fc-42aa-afd5-58e8c40440de/edit
+            - button "Xuất .exam" [ref=f7e223] [cursor=pointer]
+            - button "Chia sẻ" [ref=f7e226] [cursor=pointer]
+            - button "Xóa đề" [ref=f7e232] [cursor=pointer]
+        - generic [ref=f7e236]:
+          - generic [ref=f7e238]:
+            - heading "Danh sách câu hỏi" [level=2] [ref=f7e239]
+            - paragraph [ref=f7e240]: 1 câu trong đề
+          - article [ref=f7e242]:
+            - generic [ref=f7e243]:
+              - generic [ref=f7e244]: "1"
+              - generic [ref=f7e245]:
+                - generic [ref=f7e246]: Thủ đô của Việt Nam là gì?
+                - generic [ref=f7e247]:
+                  - generic [ref=f7e248]: ABCD
+                  - generic [ref=f7e249]: ·
+                  - generic [ref=f7e250]: 1 điểm
+    - button "Mở AI" [ref=f7e152] [cursor=pointer]

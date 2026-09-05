@@ -1,0 +1,7 @@
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useProfileStore } from "../../state/profileStore";
+import { vocabularySessionService } from "../../domain/vocabulary/vocabulary.session.service";
+import type { VocabularyResult } from "../../domain/vocabulary/vocabulary.types";
+const labels={MC_EN_TO_VI:'ABCD',TEXT_EN_TO_VI:'EN → VI',TEXT_VI_TO_EN:'VI → EN',LETTER_ORDER:'Sắp xếp chữ'} as const;
+export function VocabularyResultPage(){const {vocabularyId}=useParams();const profile=useProfileStore(s=>s.activeProfile)!;const [r,setR]=useState<VocabularyResult>();const [error,setError]=useState('');useEffect(()=>{if(!vocabularyId)return;vocabularySessionService.latestResult(profile.id,vocabularyId).then(setR).catch(e=>setError(e instanceof Error?e.message:'Không có kết quả'))},[profile.id,vocabularyId]);if(error)return <div className="card text-grade">{error}</div>;if(!r)return <div>Đang tính kết quả...</div>;return <div className="space-y-4"><div className="card text-center"><p className="text-sm muted">Kết quả</p><p className="text-4xl font-bold mt-2">{r.percentage}%</p><p className="mt-1">{r.correct} đúng · {r.wrong} sai</p></div><div className="card space-y-3">{Object.entries(labels).map(([type,label])=>{const x=r.byType[type as keyof typeof r.byType];return <div key={type} className="flex justify-between"><span>{label}</span><span>{x.correct}/{x.total}</span></div>})}</div><Link className="btn-primary block text-center" to={`/vocabulary/${vocabularyId}`}>Về từ vựng</Link></div>}

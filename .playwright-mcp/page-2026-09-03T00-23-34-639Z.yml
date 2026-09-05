@@ -1,0 +1,43 @@
+- generic [ref=f22e3]:
+  - complementary [ref=f22e4]:
+    - link "Thi Thử Exam workspace" [ref=f22e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f22e10]:
+        - strong [ref=f22e11]: Thi Thử
+        - generic [ref=f22e12]: Exam workspace
+    - generic [ref=f22e13]: Không gian học tập
+    - navigation [ref=f22e14]:
+      - link "Dashboard" [ref=f22e15] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f22e21] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f22e25] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f22e30] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f22e37] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f22e42] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f22e47] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f22e51]:
+      - generic [ref=f22e54]:
+        - strong [ref=f22e55]: Online mode
+        - generic [ref=f22e56]: Đang kết nối Internet.
+      - link "Preview Tester Hồ sơ hiện tại" [ref=f22e57] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f22e59]:
+          - strong [ref=f22e60]: Preview Tester
+          - generic [ref=f22e61]: Hồ sơ hiện tại
+  - generic [ref=f22e65]:
+    - banner [ref=f22e66]:
+      - button "Đóng sidebar" [ref=f22e68] [cursor=pointer]
+      - generic [ref=f22e70]:
+        - generic [ref=f22e71]: Đã kết nối
+        - button "Đăng xuất" [ref=f22e75] [cursor=pointer]
+        - link "Preview Tester" [ref=f22e76] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f22e79]:
+      - heading "Đang tải…" [level=2] [ref=f22e81]
+    - button "Mở AI" [ref=f22e83] [cursor=pointer]

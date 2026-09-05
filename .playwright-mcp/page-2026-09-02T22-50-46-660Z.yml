@@ -1,0 +1,12 @@
+- generic [ref=f9e156]:
+  - generic [ref=f9e157]:
+    - text: TÀI KHOẢN
+    - heading "Đăng nhập" [level=1] [ref=f9e158]
+    - paragraph [ref=f9e159]: Đăng nhập bằng username và mật khẩu. Dữ liệu học tập vẫn được lưu offline trên thiết bị.
+  - textbox "Username" [ref=f9e160]
+  - textbox "Mật khẩu" [ref=f9e161]
+  - button "Đăng nhập" [ref=f9e162] [cursor=pointer]
+  - paragraph [ref=f9e163]:
+    - text: Chưa có tài khoản?
+    - link "Đăng ký" [ref=f9e164] [cursor=pointer]:
+      - /url: /register

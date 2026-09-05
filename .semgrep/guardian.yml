@@ -1,0 +1,26 @@
+serial: 4
+anonymous_user_id: 8f277c01-11ce-490f-ae77-1fb1681c048c
+oauth:
+    metadata:
+        issuer: https://login.semgrep.dev
+        authorization_endpoint: https://login.semgrep.dev/oauth2/authorize
+        token_endpoint: https://login.semgrep.dev/oauth2/token
+        registration_endpoint: https://login.semgrep.dev/oauth2/register
+    client:
+        client_id: client_01M1JXVHQNZA2BX1AR5MQ711BT
+        callback_url: http://127.0.0.1/callback
+    token:
+        access_token: eyJhbGciOiJSUzI1NiIsImtpZCI6InNzb19vaWRjX2tleV9wYWlyXzAxSldYWjRHVkZIQkZBVFhZOUtQNDlHUFlRIn0.eyJzZW1ncmVwOm9yZ19pZCI6IjExMDI0OCIsImlzcyI6Imh0dHBzOi8vbG9naW4uc2VtZ3JlcC5kZXYiLCJhdWQiOiJjbGllbnRfMDFKV1haNEdaM1dQMUJGV0o1WVRFOUpXSzciLCJzdWIiOiJkZWZhdWx0LTE3NzE0MiIsInNpZCI6ImFwcF9jb25zZW50XzAxTTFKWTE2MkhaWDdSVFM5QkY4Q1czV1A0IiwianRpIjoiMDFNMUpZMTdIQkdFSzU5VkdNMVRFNk5CMVQiLCJjbGllbnRfaWQiOiJjbGllbnRfMDFNMUpYVkhRTlpBMkJYMUFSNU1RNzExQlQiLCJhdXRoX3RpbWUiOjE3ODg0MTU2MTMsInNjb3BlIjoiZW1haWwgb2ZmbGluZV9hY2Nlc3Mgb3BlbmlkIHByb2ZpbGUiLCJleHAiOjE3ODg1MDkyMTQsImlhdCI6MTc4ODQxNTYxNH0.JJ7G7J_ZPhBJ_CJOAJafPLFBYwvwCgqBkeQaH1PDWGQw1s3a-yo0e77PlgSzXPyuE4TTMi2ilx83zYbQT4KS7e3e-LUazXvZdN0Umtne6egIVljOyP5L75qYzegtCs4NemvjQ5blibTphmRcKewg_EWLxjllrv4Twc8Q8y4Fz4Vx6MeLMazp_ZMcLGDZeIh_GOUJB9ldV9LTjPhN2TOllV3KiG4t1n1U12ldSUk86XnC6Wpzt_DdHjgLsOWFzvBKPom7NsypMLqff_ewu3oSVyp7FC3mkJeO9HiV7G8uMGhclZ1kW0HAscJSX9KLgV5exn2lo3J-k23p4SDb9ZaWcg
+        refresh_token: uXGkSMnWuVqkZwya2e5AxlPlN
+        token_type: bearer
+        expiry: 2026-09-04T15:06:54.5045851+07:00
+deployment:
+    user_id: 177142
+    orgs:
+        - id: 110248
+          name: toanhtu210-personal-org
+          display_name: toanhtu210-personal-org
+          organization_id: 191922
+semgrep:
+    auth_method: oauth
+expiry: 2026-09-04T19:20:54.1278375+07:00

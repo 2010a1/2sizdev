@@ -1,0 +1,88 @@
+- generic [ref=f4e3]:
+  - complementary [ref=f4e4]:
+    - link "Thi Thử Exam workspace" [ref=f4e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f4e10]:
+        - strong [ref=f4e11]: Thi Thử
+        - generic [ref=f4e12]: Exam workspace
+    - generic [ref=f4e13]: Không gian học tập
+    - navigation [ref=f4e14]:
+      - link "Dashboard" [ref=f4e15] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f4e21] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f4e25] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f4e30] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f4e37] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f4e42] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f4e47] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f4e51]:
+      - generic [ref=f4e54]:
+        - strong [ref=f4e55]: Online mode
+        - generic [ref=f4e56]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f4e57] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f4e59]:
+          - strong [ref=f4e60]: Test Flow
+          - generic [ref=f4e61]: Hồ sơ hiện tại
+  - generic [ref=f4e65]:
+    - banner [ref=f4e66]:
+      - button "Đóng sidebar" [ref=f4e68] [cursor=pointer]
+      - generic [ref=f4e70]:
+        - generic [ref=f4e71]: Đã kết nối
+        - button "Đăng xuất" [ref=f4e75] [cursor=pointer]
+        - link "Test Flow" [ref=f4e76] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f4e79]:
+      - generic [ref=f4e80]:
+        - generic [ref=f4e81]:
+          - generic [ref=f4e82]:
+            - text: TRUNG TÂM CHIA SẺ
+            - heading "Chia sẻ & nhận nội dung" [level=1] [ref=f4e83]
+            - paragraph [ref=f4e84]: Một mã duy nhất để nhận đề thi hoặc bộ từ. Sau khi nhận, dữ liệu được lưu vào thiết bị để tiếp tục học offline.
+          - link "Xem hướng dẫn" [ref=f4e85] [cursor=pointer]:
+            - /url: /wiki
+        - generic [ref=f4e88]:
+          - generic [ref=f4e89]:
+            - generic [ref=f4e93]:
+              - text: NHẬN
+              - heading "Nhập mã chia sẻ" [level=2] [ref=f4e94]
+              - paragraph [ref=f4e95]: Dùng mã 6–10 ký tự do người khác gửi cho bạn.
+            - generic [ref=f4e96]:
+              - textbox "A7K92X" [active] [ref=f4e97]
+              - button "Kiểm tra mã" [disabled]
+          - generic [ref=f4e98]:
+            - generic [ref=f4e105]:
+              - text: CÁCH HOẠT ĐỘNG
+              - heading "Online để nhận, offline để dùng" [level=2] [ref=f4e106]
+              - paragraph [ref=f4e107]: Máy chủ chỉ làm nhiệm vụ phân phối. Đề và bộ từ sau khi nhập vẫn thuộc workspace local của bạn.
+            - generic [ref=f4e108]:
+              - generic [ref=f4e109]: 01 · Mã
+              - generic [ref=f4e110]: →
+              - generic [ref=f4e111]: 02 · Kiểm tra
+              - generic [ref=f4e112]: →
+              - generic [ref=f4e113]: 03 · Lưu local
+        - generic [ref=f4e114]:
+          - generic [ref=f4e115]:
+            - generic [ref=f4e116]:
+              - text: QUẢN LÝ CHIA SẺ
+              - heading "Mã chia sẻ của bạn" [level=2] [ref=f4e117]
+              - paragraph [ref=f4e118]: Theo dõi mã đang hoạt động, số lần người khác nhập mã và cập nhật nội dung mà không cần tạo mã mới.
+            - button "Làm mới" [ref=f4e119] [cursor=pointer]
+          - generic [ref=f4e120]: Bạn chưa có mã chia sẻ nào.
+        - generic [ref=f4e121]:
+          - generic [ref=f4e126]:
+            - heading "Đề thi" [level=3] [ref=f4e127]
+            - paragraph [ref=f4e128]: Nhập mã để tải .exam, xác thực hash/format và đưa đề vào Kho đề.
+          - generic [ref=f4e134]:
+            - heading "Bộ từ" [level=3] [ref=f4e135]
+            - paragraph [ref=f4e136]: Nhập mã để tạo bản sao bộ từ trong thư viện. Bộ từ mới dùng được offline ngay sau khi nhận.
+          - generic [ref=f4e142]:
+            - heading "An toàn" [level=3] [ref=f4e143]
+            - paragraph [ref=f4e144]: Mã được kiểm tra format, package và hash trước khi import; input không được dùng trực tiếp làm đường dẫn file.
+    - button "Mở AI" [ref=f4e146] [cursor=pointer]

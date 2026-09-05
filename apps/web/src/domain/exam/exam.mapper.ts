@@ -1,0 +1,27 @@
+import type { ExamMetadata, Question as StoredQuestion } from '@exam/shared-types';
+import type { Exam, Question, StoredQuestionRecord } from './exam.types';
+import type { ExamContentInput } from '@exam/schemas';
+import type { ExamAsset } from '@exam/exam-format';
+
+function legacyType(q: any): string { return q.type; }
+export function mapQuestionToStored(q: Question): StoredQuestionRecord {
+  const base:any={id:q.id,examId:q.examId,order:q.order,type:q.type,content:q.content,explanation:q.explanation,points:q.points,imageAssetId:q.imageAssetId,imageUrl:q.imageUrl};
+  if(q.type==='ABCD') return {...base,type:'ABCD',options:q.options,answer:q.correctOptionId,correctOptionId:q.correctOptionId};
+  if(q.type==='TRUE_FALSE') return {...base,type:'TRUE_FALSE',answer:q.correctAnswer,correctAnswer:q.correctAnswer,statements:q.statements};
+  return {...base,type:'SHORT_ANSWER',answer:q.acceptedAnswers[0]??'',acceptedAnswers:q.acceptedAnswers,caseSensitive:q.caseSensitive};
+}
+export function mapStoredQuestion(q: StoredQuestion): Question | null {
+  const s:any=q; const t=legacyType(q);
+  if(t==='ABCD') { const options=(s.options??[]).map((o:any)=>({id:o.id,text:o.text})); if(options.length!==4)return null; return {id:q.id,examId:q.examId,order:q.order,type:'ABCD',content:q.content,explanation:q.explanation,points:s.points??1,imageAssetId:s.imageAssetId,imageUrl:s.imageUrl,options:options as any,correctOptionId:s.correctOptionId??s.answer}; }
+  if(t==='TRUE_FALSE') return {id:q.id,examId:q.examId,order:q.order,type:'TRUE_FALSE',content:q.content,explanation:q.explanation,points:s.points??1,imageAssetId:s.imageAssetId,imageUrl:s.imageUrl,correctAnswer:Boolean(s.correctAnswer ?? s.answer),statements:Array.isArray(s.statements)?s.statements.map((x:any)=>({id:String(x.id),text:String(x.text),correct:Boolean(x.correct)})):undefined};
+  if(t==='SHORT_ANSWER') return {id:q.id,examId:q.examId,order:q.order,type:'SHORT_ANSWER',content:q.content,explanation:q.explanation,points:s.points??1,imageAssetId:s.imageAssetId,imageUrl:s.imageUrl,acceptedAnswers:s.acceptedAnswers?.length?s.acceptedAnswers:[s.answer],caseSensitive:s.caseSensitive};
+  // Phase 1-4 compatibility: old exam questions are adapted into the new three-type domain.
+  if(t==='single_choice') { const options=(s.options??[]).slice(0,4).map((o:any)=>({id:o.id,text:o.text})); while(options.length<4) options.push({id:`legacy_${options.length+1}`,text:`Lựa chọn ${options.length+1}`}); return {id:q.id,examId:q.examId,order:q.order,type:'ABCD',content:q.content,explanation:q.explanation,points:s.points??1,imageAssetId:s.imageAssetId,imageUrl:s.imageUrl,options:options as any,correctOptionId:s.correctOptionId??s.answer}; }
+  if(t==='text') return {id:q.id,examId:q.examId,order:q.order,type:'SHORT_ANSWER',content:q.content,explanation:q.explanation,points:s.points??1,imageAssetId:s.imageAssetId,imageUrl:s.imageUrl,acceptedAnswers:s.acceptedAnswers?.length?s.acceptedAnswers:[s.answer],caseSensitive:s.caseSensitive};
+  if(t==='true_false') return {id:q.id,examId:q.examId,order:q.order,type:'TRUE_FALSE',content:q.content,explanation:q.explanation,points:s.points??1,imageAssetId:s.imageAssetId,imageUrl:s.imageUrl,correctAnswer:Boolean(s.answer)};
+  return null;
+}
+export function mapExam(exam: ExamMetadata): Exam { return exam; }
+export function mapExamToExamContent(exam:Exam,questions:Question[]):Omit<ExamContentInput,'contentHash'>{return {id:exam.id,title:exam.title,description:exam.description,subject:exam.subject,grade:exam.grade,duration:exam.duration,questionCount:questions.length,source:exam.source,version:exam.version,createdAt:exam.createdAt,updatedAt:exam.updatedAt,questions:questions.map((q,i)=>{const base:any={id:q.id,examId:q.examId,order:i,type:q.type,content:q.content,explanation:q.explanation,points:q.points,imageAssetId:q.imageAssetId,imageUrl:q.imageUrl};if(q.type==='ABCD')return {...base,type:'ABCD',options:q.options,correctOptionId:q.correctOptionId};if(q.type==='TRUE_FALSE')return {...base,type:'TRUE_FALSE',correctAnswer:q.correctAnswer,statements:q.statements};return {...base,type:'SHORT_ANSWER',correctAnswers:q.acceptedAnswers?.filter(Boolean)??[],acceptedAnswers:q.acceptedAnswers?.filter(Boolean)??[],caseSensitive:q.caseSensitive};}) as any};}
+export function mapExamContentToDomain(content:ExamContentInput,newExamId?:string):{exam:Exam;questions:Question[]}{const id=newExamId??content.id;const exam:Exam={id,title:content.title,description:content.description,subject:content.subject,grade:content.grade,duration:content.duration,questionCount:content.questions.length,source:'local',version:content.version,contentHash:content.contentHash,createdAt:content.createdAt,updatedAt:content.updatedAt};const questions=content.questions.map((q,i)=>{const common:any={id:newExamId?`${q.id}_${id}`:q.id,examId:id,order:i,content:q.content,explanation:q.explanation,points:q.points??1,imageAssetId:q.imageAssetId,imageUrl:q.imageUrl};if(q.type==='ABCD')return {...common,type:'ABCD',options:q.options,correctOptionId:q.correctOptionId};if(q.type==='TRUE_FALSE')return {...common,type:'TRUE_FALSE',correctAnswer:q.correctAnswer,statements:q.statements};return {...common,type:'SHORT_ANSWER',acceptedAnswers:q.correctAnswers?.length?q.correctAnswers:[],caseSensitive:q.caseSensitive};});return {exam,questions};}
+export function mapAssetToExamFormat(asset:{path:string;data:Uint8Array;mimeType?:string;hash?:string}):ExamAsset{return {path:asset.path,data:asset.data,mimeType:asset.mimeType,hash:asset.hash};}

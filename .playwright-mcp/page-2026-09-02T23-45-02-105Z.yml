@@ -1,0 +1,97 @@
+- generic [ref=f8e4]:
+  - complementary [ref=f8e5]:
+    - link "Thi Thử Exam workspace" [ref=f8e6] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f8e11]:
+        - strong [ref=f8e12]: Thi Thử
+        - generic [ref=f8e13]: Exam workspace
+    - generic [ref=f8e14]: Không gian học tập
+    - navigation [ref=f8e15]:
+      - link "Dashboard" [ref=f8e16] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f8e22] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f8e26] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f8e31] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f8e38] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f8e43] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f8e48] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f8e52]:
+      - generic [ref=f8e55]:
+        - strong [ref=f8e56]: Online mode
+        - generic [ref=f8e57]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f8e58] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f8e60]:
+          - strong [ref=f8e61]: Test Flow
+          - generic [ref=f8e62]: Hồ sơ hiện tại
+  - generic [ref=f8e66]:
+    - banner [ref=f8e67]:
+      - button "Đóng sidebar" [ref=f8e69] [cursor=pointer]
+      - generic [ref=f8e71]:
+        - generic [ref=f8e72]: Đã kết nối
+        - button "Đăng xuất" [ref=f8e76] [cursor=pointer]
+        - link "Test Flow" [ref=f8e77] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f8e80]:
+      - generic [ref=f8e181]:
+        - generic [ref=f8e182]:
+          - link "← Thoát" [ref=f8e183] [cursor=pointer]:
+            - /url: /library
+          - generic [ref=f8e184]: 📖 Luyện tập · Câu 1/1
+          - generic "Thời gian còn lại của bài thi" [ref=f8e185]: Còn 00:29:10
+        - generic [ref=f8e186]:
+          - generic [ref=f8e187]: PHẦN I – TRẮC NGHIỆM ABCD
+          - generic [ref=f8e188]:
+            - generic [ref=f8e189]:
+              - generic [ref=f8e190]: Trắc nghiệm ABCD
+              - generic [ref=f8e191]: 0/1
+            - generic [ref=f8e192]:
+              - generic [ref=f8e193]: Đúng / Sai
+              - generic [ref=f8e194]: 0/0
+            - generic [ref=f8e195]:
+              - generic [ref=f8e196]: Trả lời ngắn
+              - generic [ref=f8e197]: 0/0
+        - generic [ref=f8e198]:
+          - generic [ref=f8e199]: Chế độ luyện tập — bạn có thể quay lại, bỏ qua và sửa đáp án trước khi nộp.
+          - generic [ref=f8e200]: Tiến độ 0/1
+        - generic [ref=f8e201]:
+          - generic [ref=f8e202]:
+            - generic [ref=f8e203]: Đã trả lời 0/1
+            - button "☆ Đánh dấu" [ref=f8e204] [cursor=pointer]
+          - generic [ref=f8e205]: Thủ đô của Việt Nam là gì?
+        - generic [ref=f8e207]:
+          - generic [ref=f8e208] [cursor=pointer]:
+            - radio "A. Hà Nội" [checked] [ref=f8e209]
+            - generic [ref=f8e210]: A.
+            - generic [ref=f8e211]: Hà Nội
+          - generic [ref=f8e212] [cursor=pointer]:
+            - radio "B. Huế" [ref=f8e213]
+            - generic [ref=f8e214]: B.
+            - generic [ref=f8e215]: Huế
+          - generic [ref=f8e216] [cursor=pointer]:
+            - radio "C. Đà Nẵng" [ref=f8e217]
+            - generic [ref=f8e218]: C.
+            - generic [ref=f8e219]: Đà Nẵng
+          - generic [ref=f8e220] [cursor=pointer]:
+            - radio "D. Cần Thơ" [ref=f8e221]
+            - generic [ref=f8e222]: D.
+            - generic [ref=f8e223]: Cần Thơ
+        - generic [ref=f8e224]:
+          - button "← Trước" [disabled]
+          - button "Nộp bài" [active] [ref=f8e225] [cursor=pointer]
+        - generic [ref=f8e226]:
+          - generic [ref=f8e227]: Đi tới câu
+          - button "1" [ref=f8e229] [cursor=pointer]
+        - generic [ref=f8e231]:
+          - heading "Xác nhận nộp bài" [level=2] [ref=f8e232]
+          - paragraph [ref=f8e233]: Bạn có chắc muốn nộp bài?
+          - generic [ref=f8e234]:
+            - button "Tiếp tục làm" [ref=f8e235] [cursor=pointer]
+            - button "Nộp bài" [ref=f8e236] [cursor=pointer]
+    - button "Mở AI" [ref=f8e177] [cursor=pointer]

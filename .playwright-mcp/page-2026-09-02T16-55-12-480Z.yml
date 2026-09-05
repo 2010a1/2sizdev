@@ -1,0 +1,73 @@
+- generic [ref=f3e3]:
+  - complementary [ref=f3e4]:
+    - link "Thi Thử Exam workspace" [ref=f3e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f3e10]:
+        - strong [ref=f3e11]: Thi Thử
+        - generic [ref=f3e12]: Exam workspace
+    - generic [ref=f3e13]: Không gian học tập
+    - navigation [ref=f3e14]:
+      - link "Dashboard" [ref=f3e15] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f3e21] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f3e25] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f3e30] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f3e37] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f3e42] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f3e47] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f3e51]:
+      - generic [ref=f3e54]:
+        - strong [ref=f3e55]: Online mode
+        - generic [ref=f3e56]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f3e57] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f3e59]:
+          - strong [ref=f3e60]: Test Flow
+          - generic [ref=f3e61]: Hồ sơ hiện tại
+  - generic [ref=f3e65]:
+    - banner [ref=f3e66]:
+      - button "Đóng sidebar" [ref=f3e68] [cursor=pointer]
+      - generic [ref=f3e70]:
+        - generic [ref=f3e71]: Đã kết nối
+        - button "Đăng xuất" [ref=f3e75] [cursor=pointer]
+        - link "Test Flow" [ref=f3e76] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f3e79]:
+      - generic [ref=f3e240]:
+        - generic [ref=f3e241]:
+          - generic [ref=f3e242]: 📊
+          - heading "Kết quả luyện tập" [level=1] [ref=f3e243]
+          - generic [ref=f3e244]: 1 điểm
+          - paragraph [ref=f3e245]: 100% đúng · 1 đúng · 0 sai · 0 bỏ trống
+          - paragraph [ref=f3e246]: Thời gian 1:01
+          - generic [ref=f3e247]:
+            - link "Về đề" [ref=f3e248] [cursor=pointer]:
+              - /url: /library/exam_78b1955c-69fc-42aa-afd5-58e8c40440de
+            - link "Làm lại" [ref=f3e249] [cursor=pointer]:
+              - /url: /practice/exam_78b1955c-69fc-42aa-afd5-58e8c40440de
+        - generic [ref=f3e250]:
+          - generic [ref=f3e251]:
+            - heading "Xem lại đáp án" [level=2] [ref=f3e252]
+            - generic [ref=f3e253]:
+              - button "Tất cả" [ref=f3e254] [cursor=pointer]
+              - button "Chỉ đáp án sai" [ref=f3e255] [cursor=pointer]
+          - generic [ref=f3e256]:
+            - generic [ref=f3e257]:
+              - generic [ref=f3e258]: Câu 1
+              - generic [ref=f3e259]: ✓ Đúng
+            - generic [ref=f3e260]: Thủ đô của Việt Nam là gì?
+            - generic [ref=f3e261]:
+              - paragraph [ref=f3e262]:
+                - text: "Đáp án của bạn:"
+                - generic [ref=f3e263]: Hà Nội
+              - paragraph [ref=f3e265]:
+                - text: "Đáp án đúng:"
+                - generic [ref=f3e266]: Hà Nội
+              - paragraph [ref=f3e268]: "Giải thích: Hà Nội là thủ đô của Việt Nam."
+    - button "Mở AI" [ref=f3e86] [cursor=pointer]

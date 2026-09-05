@@ -1,0 +1,13 @@
+- generic [ref=f17e6]:
+  - generic [ref=f17e7]:
+    - text: TÀI KHOẢN
+    - heading "Đăng nhập" [level=1] [ref=f17e8]
+    - paragraph [ref=f17e9]: Đăng nhập bằng username và mật khẩu. Dữ liệu học tập vẫn được lưu offline trên thiết bị.
+  - textbox "Username" [ref=f17e10]: v2tester
+  - textbox "Mật khẩu" [ref=f17e11]: v2pass12345
+  - paragraph [ref=f17e15]: Thông tin đăng nhập không chính xác.
+  - button "Đăng nhập" [ref=f17e12] [cursor=pointer]
+  - paragraph [ref=f17e13]:
+    - text: Chưa có tài khoản?
+    - link "Đăng ký" [ref=f17e14] [cursor=pointer]:
+      - /url: /register

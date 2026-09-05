@@ -1,0 +1,17 @@
+import { chromium } from "@playwright/test";
+const browser = await chromium.launch();
+const page = await (await browser.newContext({ viewport: { width: 1440, height: 1000 } })).newPage();
+const suf = `${Date.now()}`;
+await page.goto("http://127.0.0.1:4173/register");
+await page.getByPlaceholder("Tên hiển thị").fill(`Acc ${suf}`);
+await page.getByPlaceholder("Username").fill(`acc_${suf}`);
+await page.getByPlaceholder("Mật khẩu (ít nhất 10 ký tự)").fill("shot-password-123");
+await page.getByPlaceholder("Nhập lại mật khẩu").fill("shot-password-123");
+await page.getByRole("button", { name: "Đăng ký & vào học" }).click();
+await page.getByRole("heading", { name: /Kho đề/ }).waitFor();
+await page.goto("http://127.0.0.1:4173/account");
+await page.locator(".account-section-nav").waitFor();
+await page.waitForTimeout(400);
+await page.screenshot({ path: ".shots/account-tabs.png", fullPage: true });
+await browser.close();
+console.log("ok");

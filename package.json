@@ -1,0 +1,27 @@
+{
+  "name": "exam-platform",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @exam/web --filter @exam/api dev",
+    "install:check": "pnpm install --frozen-lockfile=false",
+    "typecheck": "pnpm --filter @exam/web typecheck && pnpm --filter @exam/api typecheck",
+    "test": "pnpm --filter @exam/web test && pnpm --filter @exam/api test",
+    "build": "pnpm --filter @exam/web build && pnpm --filter @exam/api build",
+    "lint": "node scripts/lint.mjs",
+    "start:api": "pnpm --filter @exam/api start",
+    "start:web": "pnpm --filter @exam/web start",
+    "ci": "pnpm typecheck && pnpm lint && pnpm test && pnpm build",
+    "e2e": "playwright test",
+    "dev:reset": "node scripts/free-ports.mjs && pnpm dev"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "fast-uri@^3.0.0": "^3.1.7",
+      "fast-uri@^4.0.0": "^4.1.3"
+    }
+  }
+}

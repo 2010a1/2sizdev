@@ -1,0 +1,30 @@
+{
+  "name": "@exam/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "node -e \"console.log('SQLite schema is runtime-managed; no client generation required.')\"",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:reset": "tsx src/db/reset.ts",
+    "db:backup": "tsx src/db/cli.ts backup",
+    "db:restore": "tsx src/db/cli.ts restore",
+    "start": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.0",
+    "fastify": "^5.0.0",
+    "zod": "^4.0.0",
+    "@exam/exam-format": "workspace:*",
+    "@exam/schemas": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.7"
+  }
+}

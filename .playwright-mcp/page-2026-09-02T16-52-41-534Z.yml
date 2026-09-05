@@ -1,0 +1,117 @@
+- generic [ref=f2e15]:
+  - complementary [ref=f2e16]:
+    - link "Thi Thử Exam workspace" [ref=f2e17] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f2e22]:
+        - strong [ref=f2e23]: Thi Thử
+        - generic [ref=f2e24]: Exam workspace
+    - generic [ref=f2e25]: Không gian học tập
+    - navigation [ref=f2e26]:
+      - link "Dashboard" [ref=f2e27] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f2e33] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f2e37] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f2e42] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f2e49] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f2e54] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f2e59] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f2e63]:
+      - generic [ref=f2e66]:
+        - strong [ref=f2e67]: Online mode
+        - generic [ref=f2e68]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f2e69] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f2e71]:
+          - strong [ref=f2e72]: Test Flow
+          - generic [ref=f2e73]: Hồ sơ hiện tại
+  - generic [ref=f2e77]:
+    - banner [ref=f2e78]:
+      - button "Đóng sidebar" [ref=f2e80] [cursor=pointer]
+      - generic [ref=f2e82]:
+        - generic [ref=f2e83]: Đã kết nối
+        - button "Đăng xuất" [ref=f2e87] [cursor=pointer]
+        - link "Test Flow" [ref=f2e88] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f2e91]:
+      - generic [ref=f2e159]:
+        - generic [ref=f2e160]:
+          - generic [ref=f2e161]:
+            - text: TRÌNH TẠO ĐỀ
+            - heading "Tạo đề mới" [level=1] [ref=f2e162]
+            - paragraph [ref=f2e163]: Tạo đề bằng JSON hoặc dùng prompt AI. Nếu mới sử dụng, làm theo bảng hướng dẫn bên phải.
+          - button "Quay lại Kho đề" [ref=f2e164] [cursor=pointer]
+        - generic [ref=f2e167]:
+          - generic [ref=f2e168]:
+            - generic [ref=f2e169]:
+              - generic [ref=f2e170]:
+                - text: JSON
+                - heading "Dán JSON đề thi" [level=2] [ref=f2e171]
+                - paragraph [ref=f2e172]: Có thể dán JSON tự viết hoặc JSON do AI tạo. Ctrl + Enter để kiểm tra.
+              - generic [ref=f2e173]: 1 câu
+            - textbox [ref=f2e174]: "{ \"title\": \"Đề mẫu — Lịch sử Việt Nam\", \"description\": \"Đề mẫu để thử tạo và chỉnh sửa.\", \"subject\": \"Lịch sử\", \"grade\": 12, \"duration\": 1800, \"questions\": [ { \"id\": \"q1\", \"type\": \"ABCD\", \"content\": \"Thủ đô của Việt Nam là gì?\", \"points\": 1, \"options\": [ { \"id\": \"q1_a\", \"text\": \"Hà Nội\" }, { \"id\": \"q1_b\", \"text\": \"Huế\" }, { \"id\": \"q1_c\", \"text\": \"Đà Nẵng\" }, { \"id\": \"q1_d\", \"text\": \"Cần Thơ\" } ], \"correctOptionId\": \"q1_a\", \"explanation\": \"Hà Nội là thủ đô của Việt Nam.\" } ] }"
+            - generic [ref=f2e175]:
+              - generic [ref=f2e176] [cursor=pointer]: Import JSON
+              - button "Kiểm tra JSON" [active] [ref=f2e179] [cursor=pointer]
+              - button "Lưu đề" [ref=f2e227] [cursor=pointer]
+              - button "Công cụ khác" [ref=f2e182] [cursor=pointer]
+          - generic [ref=f2e183]:
+            - generic [ref=f2e184]:
+              - generic [ref=f2e185]:
+                - generic [ref=f2e186]:
+                  - text: HƯỚNG DẪN NHANH
+                  - heading "Người mới dùng ngay" [level=2] [ref=f2e187]
+                - generic [ref=f2e188]: JSON hợp lệ
+              - table [ref=f2e190]:
+                - rowgroup [ref=f2e191]:
+                  - row [ref=f2e192]:
+                    - columnheader "Bước" [ref=f2e193]
+                    - columnheader "Làm gì?" [ref=f2e194]
+                    - columnheader "Kết quả" [ref=f2e195]
+                - rowgroup [ref=f2e196]:
+                  - row [ref=f2e197]:
+                    - cell "1" [ref=f2e198]
+                    - cell "Mở AI Prompt bên dưới và Copy Prompt." [ref=f2e199]
+                    - cell "Có prompt chuẩn để đưa ảnh/đề cho AI." [ref=f2e200]
+                  - row [ref=f2e201]:
+                    - cell "2" [ref=f2e202]
+                    - cell "Gửi prompt + ảnh đề cho AI, yêu cầu AI trả về JSON." [ref=f2e203]
+                    - cell "Copy JSON AI trả về." [ref=f2e204]
+                  - row [ref=f2e205]:
+                    - cell "3" [ref=f2e206]
+                    - cell "Dán JSON vào ô bên trái rồi bấm Kiểm tra JSON." [ref=f2e207]
+                    - cell "Hệ thống báo lỗi nếu JSON sai." [ref=f2e208]
+                  - row [ref=f2e209]:
+                    - cell "4" [ref=f2e210]
+                    - cell "JSON hợp lệ → bấm Lưu đề." [ref=f2e211]
+                    - cell "Đề được lưu và mở trình chỉnh sửa." [ref=f2e212]
+              - paragraph [ref=f2e213]:
+                - text: "Mẹo: nếu đã có JSON sẵn, bỏ qua bước AI và dán trực tiếp. Mỗi câu nên có"
+                - code [ref=f2e214]: explanation
+                - text: để có thể giải thích offline khi người học làm sai.
+            - generic [ref=f2e229]:
+              - generic [ref=f2e230]:
+                - generic [ref=f2e231]:
+                  - text: PREVIEW
+                  - heading "Xem trước đề" [level=2] [ref=f2e232]
+                  - paragraph [ref=f2e233]: Kiểm tra nhanh nội dung trước khi lưu.
+                - generic [ref=f2e234]: 1 câu
+              - generic [ref=f2e235]:
+                - strong [ref=f2e236]: Đề mẫu — Lịch sử Việt Nam
+                - generic [ref=f2e237]: Lịch sử · Lớp 12
+              - article [ref=f2e239]:
+                - paragraph [ref=f2e241]: Câu 1 · ABCD
+                - generic [ref=f2e242]: Thủ đô của Việt Nam là gì?
+                - paragraph [ref=f2e243]: "4 lựa chọn · đáp án đúng: q1_a"
+            - group [ref=f2e221]:
+              - generic "📷 Tạo đề từ ảnh + AI Copy prompt này, gửi kèm ảnh đề cho AI, rồi dán JSON AI trả về vào ô bên trái. Mở" [ref=f2e222] [cursor=pointer]:
+                - generic [ref=f2e223]:
+                  - heading "📷 Tạo đề từ ảnh + AI" [level=2] [ref=f2e224]
+                  - paragraph [ref=f2e225]: Copy prompt này, gửi kèm ảnh đề cho AI, rồi dán JSON AI trả về vào ô bên trái.
+                - generic [ref=f2e226]: Mở
+    - button "Mở AI" [ref=f2e155] [cursor=pointer]

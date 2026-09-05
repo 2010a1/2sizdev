@@ -1,0 +1,128 @@
+- generic [ref=f6e3]:
+  - complementary [ref=f6e4]:
+    - link "Thi Thử Exam workspace" [ref=f6e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f6e10]:
+        - strong [ref=f6e11]: Thi Thử
+        - generic [ref=f6e12]: Exam workspace
+    - generic [ref=f6e13]: Không gian học tập
+    - navigation [ref=f6e14]:
+      - link "Dashboard" [ref=f6e15] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f6e21] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f6e25] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f6e30] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f6e37] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f6e42] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f6e47] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f6e51]:
+      - generic [ref=f6e54]:
+        - strong [ref=f6e55]: Online mode
+        - generic [ref=f6e56]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f6e57] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f6e59]:
+          - strong [ref=f6e60]: Test Flow
+          - generic [ref=f6e61]: Hồ sơ hiện tại
+  - generic [ref=f6e65]:
+    - banner [ref=f6e66]:
+      - button "Đóng sidebar" [ref=f6e68] [cursor=pointer]
+      - generic [ref=f6e70]:
+        - generic [ref=f6e71]: Đã kết nối
+        - button "Đăng xuất" [ref=f6e75] [cursor=pointer]
+        - link "Test Flow" [ref=f6e76] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f6e79]:
+      - generic [ref=f6e80]:
+        - generic [ref=f6e82]:
+          - text: TÀI KHOẢN
+          - heading "Quản lý tài khoản" [level=1] [ref=f6e83]
+          - paragraph [ref=f6e84]: Thông tin tài khoản server và dữ liệu offline trên thiết bị.
+        - generic [ref=f6e85]:
+          - link "👤 Tài khoản & hồ sơ" [ref=f6e86] [cursor=pointer]:
+            - /url: /account
+            - generic [ref=f6e87]: 👤
+            - text: Tài khoản & hồ sơ
+          - link "⚙ Cài đặt" [ref=f6e88] [cursor=pointer]:
+            - /url: /account/settings
+            - generic [ref=f6e89]: ⚙
+            - text: Cài đặt
+          - link "✦ Keybind" [ref=f6e90] [cursor=pointer]:
+            - /url: /account/keybind
+            - generic [ref=f6e91]: ✦
+            - text: Keybind
+        - generic [ref=f6e93]:
+          - img "Avatar" [ref=f6e95]
+          - generic [ref=f6e96]:
+            - text: HỒ SƠ
+            - heading "Test Flow" [level=2] [ref=f6e97]
+            - paragraph [ref=f6e98]: Avatar được lưu local trên thiết bị nên vẫn hiển thị khi offline.
+          - generic [ref=f6e99] [cursor=pointer]: Đổi ảnh
+        - generic [ref=f6e100]:
+          - heading "Thông tin" [level=2] [ref=f6e101]
+          - generic [ref=f6e102]:
+            - generic [ref=f6e103]:
+              - generic [ref=f6e104]: Tên
+              - generic [ref=f6e105]: Test Flow
+            - generic [ref=f6e106]:
+              - generic [ref=f6e107]: Username
+              - generic [ref=f6e108]: testflow_0902
+            - generic [ref=f6e109]:
+              - generic [ref=f6e110]: Ngày đăng ký
+              - generic [ref=f6e111]: 23:51:40 2/9/2026
+            - generic [ref=f6e112]:
+              - generic [ref=f6e113]: Lần đăng nhập cuối
+              - generic [ref=f6e114]: 23:51:40 2/9/2026
+        - generic [ref=f6e115]:
+          - generic [ref=f6e117]:
+            - strong [ref=f6e118]: —
+            - generic [ref=f6e119]: Tổng bài làm
+          - generic [ref=f6e121]:
+            - strong [ref=f6e122]: —
+            - generic [ref=f6e123]: Thi đấu
+          - generic [ref=f6e125]:
+            - strong [ref=f6e126]: —
+            - generic [ref=f6e127]: Luyện tập
+          - generic [ref=f6e129]:
+            - strong [ref=f6e130]: —
+            - generic [ref=f6e131]: English
+          - generic [ref=f6e133]:
+            - strong [ref=f6e134]: —
+            - generic [ref=f6e135]: Đề tạo
+          - generic [ref=f6e137]:
+            - strong [ref=f6e138]: —
+            - generic [ref=f6e139]: Share
+        - generic [ref=f6e140]:
+          - heading "Đổi mật khẩu" [level=2] [ref=f6e141]
+          - generic [ref=f6e142]:
+            - generic [ref=f6e143]:
+              - textbox "Mật khẩu hiện tại" [ref=f6e144]
+              - button "Hiện mật khẩu" [ref=f6e145] [cursor=pointer]: 👁
+            - generic [ref=f6e146]:
+              - textbox "Mật khẩu mới" [ref=f6e147]
+              - button "Hiện mật khẩu" [ref=f6e148] [cursor=pointer]: 👁
+            - textbox "Xác nhận mật khẩu mới" [ref=f6e149]
+            - button "Đổi mật khẩu" [disabled]
+        - generic [ref=f6e151]:
+          - generic [ref=f6e152]:
+            - heading "Phiên đăng nhập" [level=2] [ref=f6e153]
+            - paragraph [ref=f6e154]: Không hiển thị session secret. Chỉ hiển thị metadata cần thiết.
+          - button "Đăng xuất thiết bị khác" [ref=f6e155] [cursor=pointer]
+        - generic [ref=f6e156]:
+          - heading "Backup / Restore" [level=2] [ref=f6e157]
+          - paragraph [ref=f6e158]: Export local exams, attempts, vocabulary, settings và dữ liệu học tập thành JSON. Sync queue không được export để tránh replay mutation cũ.
+          - generic [ref=f6e159]:
+            - button "Export backup JSON" [ref=f6e160] [cursor=pointer]
+            - button "Export backup ZIP" [ref=f6e161] [cursor=pointer]
+            - generic [ref=f6e162] [cursor=pointer]: Import backup JSON
+        - generic [ref=f6e163]:
+          - heading "Xóa tài khoản" [level=2] [ref=f6e164]
+          - paragraph [ref=f6e165]: Tài khoản sẽ chuyển sang DELETED, session bị revoke và không thể đăng nhập lại. Security/audit records cần thiết có thể được giữ lại.
+          - button "Xóa tài khoản" [ref=f6e166] [cursor=pointer]
+    - button "Mở AI" [ref=f6e168] [cursor=pointer]

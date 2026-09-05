@@ -1,0 +1,39 @@
+server {
+    listen 8080;
+    server_name _;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # API must be handled before the SPA fallback. Without this block nginx
+    # receives POST /api/* as a static-file request and returns HTTP 405.
+    location /api/ {
+        # Fastify accepts 36 MB bodies (app.ts bodyLimit) and official-exam
+        # packages up to 25 MB; nginx defaults to 1 MB and would 413 them.
+        client_max_body_size 36m;
+        proxy_pass ${API_UPSTREAM};
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_connect_timeout 5s;
+        proxy_send_timeout 30s;
+        proxy_read_timeout 30s;
+    }
+
+    location = /api {
+        return 308 /api/;
+    }
+
+    location / {
+        # Security headers for the SPA shell only. /api/ responses get their own
+        # headers from Fastify's onRequest hook; setting them here too would emit
+        # duplicates on proxied responses (nginx add_header stacks, never replaces).
+        add_header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-Frame-Options "DENY" always;
+        add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+        try_files $uri $uri/ /index.html;
+    }
+}

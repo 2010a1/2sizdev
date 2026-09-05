@@ -1,0 +1,96 @@
+- generic [ref=f5e3]:
+  - complementary [ref=f5e4]:
+    - link "Thi Thử Exam workspace" [ref=f5e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f5e10]:
+        - strong [ref=f5e11]: Thi Thử
+        - generic [ref=f5e12]: Exam workspace
+    - generic [ref=f5e13]: Không gian học tập
+    - navigation [ref=f5e14]:
+      - link "Dashboard" [ref=f5e15] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f5e21] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f5e25] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f5e30] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f5e37] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f5e42] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f5e47] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f5e51]:
+      - generic [ref=f5e54]:
+        - strong [ref=f5e55]: Online mode
+        - generic [ref=f5e56]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f5e57] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f5e59]:
+          - strong [ref=f5e60]: Test Flow
+          - generic [ref=f5e61]: Hồ sơ hiện tại
+  - generic [ref=f5e65]:
+    - banner [ref=f5e66]:
+      - button "Đóng sidebar" [ref=f5e68] [cursor=pointer]
+      - generic [ref=f5e70]:
+        - generic [ref=f5e71]: Đã kết nối
+        - button "Đăng xuất" [ref=f5e75] [cursor=pointer]
+        - link "Test Flow" [ref=f5e76] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f5e79]:
+      - generic [ref=f5e80]:
+        - complementary [ref=f5e81]:
+          - generic [ref=f5e86]:
+            - text: THI THỬ
+            - strong [ref=f5e87]: Hướng dẫn
+          - textbox "Tìm trong hướng dẫn…" [ref=f5e92]
+          - navigation [ref=f5e93]:
+            - button "Bắt đầu" [ref=f5e94] [cursor=pointer]
+            - button "Kho đề & tạo đề" [ref=f5e99] [cursor=pointer]
+            - button "Luyện tập" [ref=f5e103] [cursor=pointer]
+            - button "Thi đấu" [ref=f5e107] [cursor=pointer]
+            - button "Từ vựng & bộ từ" [ref=f5e112] [cursor=pointer]
+            - button "Chia sẻ & nhận" [ref=f5e117] [cursor=pointer]
+            - button "Hồ sơ & tiện ích" [ref=f5e124] [cursor=pointer]
+          - link "Đi tới Chia sẻ" [ref=f5e129] [cursor=pointer]:
+            - /url: /share
+        - main [ref=f5e136]:
+          - generic [ref=f5e137]:
+            - text: WIKI / HƯỚNG DẪN SỬ DỤNG
+            - heading "Thi Thử — Hướng dẫn" [level=1] [ref=f5e138]
+            - paragraph [ref=f5e139]: Tìm hiểu các loại đề, cách luyện tập, từ vựng, chia sẻ nội dung và những tính năng chính của website.
+            - generic [ref=f5e140]:
+              - generic [ref=f5e141]: 7 chủ đề
+              - generic [ref=f5e142]: Đề thi + luyện tập
+              - generic [ref=f5e143]: Từ vựng + bộ từ
+              - generic [ref=f5e144]: Chia sẻ bằng mã
+          - article [ref=f5e145]:
+            - generic [ref=f5e151]:
+              - text: CHỦ ĐỀ
+              - heading "Bắt đầu" [level=2] [ref=f5e152]
+              - paragraph [ref=f5e153]: Tổng quan nhanh về những gì bạn có thể làm trên Thi Thử.
+            - generic [ref=f5e154]:
+              - generic [ref=f5e155]:
+                - generic [ref=f5e156]: "01"
+                - generic [ref=f5e157]:
+                  - heading "Thi Thử có gì?" [level=3] [ref=f5e158]
+                  - paragraph [ref=f5e159]: Thi Thử là nơi bạn có thể tạo và quản lý đề, luyện tập, thi đấu, học từ vựng và chia sẻ nội dung với người khác.
+              - generic [ref=f5e160]:
+                - generic [ref=f5e161]: "02"
+                - generic [ref=f5e162]:
+                  - heading "Các khu vực chính" [level=3] [ref=f5e163]
+                  - paragraph [ref=f5e164]: Bạn có thể bắt đầu từ Kho đề, Luyện tập, Thi đấu, Từ vựng hoặc Chia sẻ. Mỗi khu vực tập trung vào một nhu cầu khác nhau nhưng dữ liệu của bạn được giữ lại để có thể tiếp tục sử dụng bất cứ lúc nào.
+              - generic [ref=f5e165]:
+                - generic [ref=f5e166]: "03"
+                - generic [ref=f5e167]:
+                  - heading "Dùng khi không có mạng" [level=3] [ref=f5e168]
+                  - paragraph [ref=f5e169]: Những đề và bộ từ đã có trên thiết bị vẫn có thể mở, làm bài và luyện tập khi không có Internet.
+          - generic [ref=f5e170]:
+            - generic [ref=f5e171]:
+              - text: BẮT ĐẦU NHANH
+              - heading "Muốn nhận đề hoặc bộ từ?" [level=3] [ref=f5e172]
+              - paragraph [ref=f5e173]: Mở Chia sẻ, nhập mã và nhận nội dung về thiết bị để sử dụng ngay.
+            - link "Nhận bằng mã" [ref=f5e174] [cursor=pointer]:
+              - /url: /share
+    - button "Mở AI" [ref=f5e178] [cursor=pointer]

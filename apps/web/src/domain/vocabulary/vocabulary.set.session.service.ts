@@ -1,0 +1,50 @@
+import { generateId } from '@exam/utils';
+import type { VocabQuestion, VocabQuestionType, VocabularySession, Vocabulary } from '@exam/shared-types';
+import { vocabularyRepository } from './vocabulary.repository';
+import { vocabularySetService } from './vocabulary.set.service';
+import { vocabularySetRepository } from './vocabulary.set.repository';
+import { vocabularyService } from './vocabulary.service';
+import { VocabularySessionError, VocabularyNotFoundError } from './vocabulary.errors';
+import { selectSmartQuestions } from './vocabulary.smart-selection';
+import { VocabularyPracticeEngine, type VocabularyEngineState } from './vocabulary.engine';
+import { scoreVocabularyAnswer } from './vocabulary.scoring';
+import type { VocabularySetMode, RequestedQuestionCount } from './vocabulary.set.types';
+
+export interface SetPracticeConfig { mode:VocabularySetMode; requestedCount:RequestedQuestionCount; questionTypes:VocabQuestionType[]; seed?:string; startedAt?:number; }
+export interface SetSessionState { session:VocabularySession; questions:VocabQuestion[]; answers:Record<string,string>; currentQuestionIndex:number; }
+export interface SetResult { sessionId:string; setId:string; score:number; percentage:number; correct:number; wrong:number; unanswered:number; timeSpent:number; byType:Record<VocabQuestionType,{correct:number;total:number}>; byVocabulary:Record<string,{correct:number;total:number}>; weakWords:string[]; wrongWords:string[]; details:Array<{questionId:string;vocabularyId:string;type:VocabQuestionType;prompt:string;userAnswer?:string;correctAnswer:string;correct:boolean}>; }
+
+function answerMap(rows:Awaited<ReturnType<typeof vocabularyRepository.getSessionAnswers>>) { return Object.fromEntries(rows.map(r=>[r.questionId,r.answer])); }
+async function load(profileId:string,sessionId:string){
+  const session=await vocabularyRepository.getSession(profileId,sessionId); if(!session||!session.setId)throw new VocabularySessionError('Không tìm thấy phiên bộ từ.');
+  const items=await vocabularySetRepository.items(profileId,session.setId); const all=await Promise.all(items.map(i=>vocabularyRepository.questions(profileId,i.vocabularyId,true))); const rows=all.flat(); const byId=new Map(rows.map(q=>[q.id,q]));
+  const questions=session.questionIds.map(id=>byId.get(id) ?? undefined).filter((q):q is VocabQuestion=>!!q);
+   const answers=answerMap(await vocabularyRepository.getSessionAnswers(sessionId));
+  const engine=new VocabularyPracticeEngine(questions,{startedAt:session.startedAt,currentIndex:session.currentIndex,answers,visited:session.visitedQuestionIds,flagged:session.flaggedQuestionIds,status:session.status,finishedAt:session.finishedAt,questionEnteredAt:session.questionEnteredAt});
+  return {session,questions,engine};
+}
+async function persist(id:string,state:VocabularyEngineState){await vocabularyRepository.updateSession(id,{currentIndex:state.currentQuestionIndex,visitedQuestionIds:state.visitedQuestionIds,flaggedQuestionIds:state.flaggedQuestionIds,status:state.status,finishedAt:state.finishedAt,questionEnteredAt:state.questionEnteredAt});}
+
+export const vocabularySetSessionService={
+  async resume(profileId:string,setId:string){const rows=await dbSessions(profileId,setId);const active=rows.filter(s=>s.status==='in_progress').sort((a,b)=>b.startedAt-a.startedAt)[0];return active?this.state(profileId,active.id):undefined;},
+  async create(profileId:string,setId:string,config:SetPracticeConfig):Promise<SetSessionState>{
+    const detail=await vocabularySetService.detail(profileId,setId); if(!detail.vocabularies.length)throw new VocabularySessionError('Bộ từ chưa có từ nào khả dụng.');
+    const questions=await vocabularySetService.questions(profileId,setId); const progress=await vocabularySetService.progress(profileId,setId); const history=await vocabularySetRepository.sessionAnswersForSet(profileId,setId); const wrongQuestionIds:Set<string>=new Set(history.filter(a=>!a.correct).map(a=>a.questionId)); const attemptedQuestionIds:Set<string>=new Set(history.map(a=>a.questionId)); const recentQuestionIds:Set<string>=new Set(history.sort((a,b)=>b.answeredAt-a.answeredAt).slice(0,Math.min(10,history.length)).map(a=>a.questionId)); const seed=config.seed??`${setId}:${config.mode}:${config.requestedCount}:${config.questionTypes.join(',')}:1`;
+    const selected=selectSmartQuestions({questions,progress,mode:config.mode,requestedCount:config.requestedCount,questionTypes:config.questionTypes,seed,wrongQuestionIds,attemptedQuestionIds,recentQuestionIds});
+    if(!selected.length)throw new VocabularySessionError('Không có câu hỏi phù hợp với lựa chọn hiện tại.');
+    const startedAt=config.startedAt??Date.now(); const session:VocabularySession={id:generateId('vsession'),profileId,vocabularyId:detail.vocabularies[0].id,setId,mode:'set_practice',questionIds:selected.map(q=>q.id),selectedQuestionIds:selected.map(q=>q.id),selectedQuestionTypes:[...config.questionTypes],requestedCount:config.requestedCount,seed,currentIndex:0,startedAt,questionEnteredAt:startedAt,status:'in_progress',visitedQuestionIds:[],flaggedQuestionIds:[]};
+    await vocabularyRepository.createSession(session); return this.state(profileId,session.id);
+  },
+  async state(profileId:string,sessionId:string){const {session,questions,engine}=await load(profileId,sessionId);const state=engine.getState();return {session,questions,answers:state.answers,currentQuestionIndex:state.currentQuestionIndex};},
+  async answer(profileId:string,sessionId:string,answer:string,now=Date.now()){const {session,questions,engine}=await load(profileId,sessionId);const q=engine.getCurrentQuestion();if(!q)throw new VocabularySessionError('Không có câu hỏi.');const result=engine.answer(answer,now);const existing=(await vocabularyRepository.getSessionAnswers(sessionId)).find(a=>a.questionId===q.id);await vocabularyRepository.saveSessionAnswer({id:`${sessionId}:${q.id}`,sessionId,questionId:q.id,answer,correct:result.correct,timeSpent:result.timeSpent,answeredAt:now});if(!existing)await vocabularyService.updateProgress(profileId,q.vocabularyId,q.type,result.correct,now);await persist(sessionId,engine.getState());return result;},
+  async next(profileId:string,sessionId:string,now=Date.now()){const {engine}=await load(profileId,sessionId);engine.next(now);await persist(sessionId,engine.getState());return engine.getState();},
+  async previous(profileId:string,sessionId:string,now=Date.now()){const {engine}=await load(profileId,sessionId);engine.previous(now);await persist(sessionId,engine.getState());return engine.getState();},
+  async jump(profileId:string,sessionId:string,index:number,now=Date.now()){const {engine}=await load(profileId,sessionId);engine.jump(index,now);await persist(sessionId,engine.getState());return engine.getState();},
+  async flag(profileId:string,sessionId:string){const {engine}=await load(profileId,sessionId);engine.flag();await persist(sessionId,engine.getState());return engine.getState();},
+  async submit(profileId:string,sessionId:string,now=Date.now()){const {engine}=await load(profileId,sessionId);const state=engine.submit(now);await persist(sessionId,state);return this.result(profileId,sessionId);},
+  async abandon(profileId:string,sessionId:string,now=Date.now()){const {session}=await load(profileId,sessionId);if(session.status!=='in_progress')throw new VocabularySessionError('Phiên đã kết thúc.');await vocabularyRepository.updateSession(sessionId,{status:'abandoned',finishedAt:now});},
+  async result(profileId:string,sessionId:string):Promise<SetResult>{const {session,questions}=await load(profileId,sessionId);if(!session.setId)throw new VocabularySessionError('Session không thuộc Set.');const answers=await vocabularyRepository.getSessionAnswers(sessionId);const byId=new Map(answers.map(a=>[a.questionId,a]));const byType={MC_EN_TO_VI:{correct:0,total:0},TEXT_EN_TO_VI:{correct:0,total:0},TEXT_VI_TO_EN:{correct:0,total:0},LETTER_ORDER:{correct:0,total:0}} as SetResult['byType'];const byVocabulary:Record<string,{correct:number;total:number}>={};const details:SetResult['details']=[];let correct=0,wrong=0,unanswered=0,timeSpent=0;for(const q of questions){byType[q.type].total++;byVocabulary[q.vocabularyId]??={correct:0,total:0};byVocabulary[q.vocabularyId].total++;const a=byId.get(q.id);if(!a){unanswered++;details.push({questionId:q.id,vocabularyId:q.vocabularyId,type:q.type,prompt:q.prompt,correctAnswer:q.answer,correct:false});continue;}timeSpent+=a.timeSpent;const ok=scoreVocabularyAnswer(q,a.answer);details.push({questionId:q.id,vocabularyId:q.vocabularyId,type:q.type,prompt:q.prompt,userAnswer:a.answer,correctAnswer:q.answer,correct:ok});if(ok){correct++;byType[q.type].correct++;byVocabulary[q.vocabularyId].correct++;}else wrong++;}const total=questions.length;const items=await vocabularySetRepository.items(profileId,session.setId);const vocabRows=await Promise.all(items.map(i=>vocabularyRepository.get(profileId,i.vocabularyId)));const names=new Map(vocabRows.filter((v):v is Vocabulary=>!!v).map(v=>[v.id,v.english]));const progressRows=await Promise.all(vocabRows.filter((v):v is Vocabulary=>!!v).map(v=>vocabularyRepository.getProgress(profileId,v.id,v.generation)));const progress=progressRows.flat();const weak=[...new Set(progress.filter(p=>p.attemptCount>0&&p.mastery<60).map(p=>names.get(p.vocabularyId)).filter((x):x is string=>!!x))];const wrongWords=[...new Set(progress.filter(p=>p.wrongCount>0).map(p=>names.get(p.vocabularyId)).filter((x):x is string=>!!x))];return {sessionId,setId:session.setId,score:correct,percentage:total?Math.round(correct/total*100):0,correct,wrong,unanswered,timeSpent,byType,byVocabulary,weakWords:weak,wrongWords,details};},
+  async latestResult(profileId:string,setId:string){const rows=await dbSessions(profileId,setId);const finished=rows.filter(s=>s.status==='submitted').sort((a,b)=>(b.finishedAt??0)-(a.finishedAt??0))[0];if(!finished)throw new VocabularySessionError('Chưa có kết quả bộ từ.');return this.result(profileId,finished.id);}
+};
+
+async function dbSessions(profileId:string,setId:string){return vocabularySetRepository.sessions(profileId,setId);}

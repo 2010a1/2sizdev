@@ -1,0 +1,91 @@
+- generic [ref=f3e3]:
+  - complementary [ref=f3e4]:
+    - link "Thi Thử Exam workspace" [ref=f3e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f3e10]:
+        - strong [ref=f3e11]: Thi Thử
+        - generic [ref=f3e12]: Exam workspace
+    - generic [ref=f3e13]: Không gian học tập
+    - navigation [ref=f3e14]:
+      - link "Dashboard" [ref=f3e15] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f3e21] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f3e25] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f3e30] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f3e37] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f3e42] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f3e47] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f3e51]:
+      - generic [ref=f3e54]:
+        - strong [ref=f3e55]: Online mode
+        - generic [ref=f3e56]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f3e57] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f3e59]:
+          - strong [ref=f3e60]: Test Flow
+          - generic [ref=f3e61]: Hồ sơ hiện tại
+  - generic [ref=f3e65]:
+    - banner [ref=f3e66]:
+      - button "Đóng sidebar" [ref=f3e68] [cursor=pointer]
+      - generic [ref=f3e70]:
+        - generic [ref=f3e71]: Đã kết nối
+        - button "Đăng xuất" [ref=f3e75] [cursor=pointer]
+        - link "Test Flow" [ref=f3e76] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f3e79]:
+      - generic [ref=f3e184]:
+        - generic [ref=f3e185]:
+          - link "← Thoát" [ref=f3e186] [cursor=pointer]:
+            - /url: /library
+          - generic [ref=f3e187]: 📖 Luyện tập · Câu 1/1
+          - generic "Thời gian còn lại của bài thi" [ref=f3e188]: Còn 00:29:37
+        - generic [ref=f3e189]:
+          - generic [ref=f3e190]: PHẦN I – TRẮC NGHIỆM ABCD
+          - generic [ref=f3e191]:
+            - generic [ref=f3e192]:
+              - generic [ref=f3e193]: Trắc nghiệm ABCD
+              - generic [ref=f3e194]: 0/1
+            - generic [ref=f3e195]:
+              - generic [ref=f3e196]: Đúng / Sai
+              - generic [ref=f3e197]: 0/0
+            - generic [ref=f3e198]:
+              - generic [ref=f3e199]: Trả lời ngắn
+              - generic [ref=f3e200]: 0/0
+        - generic [ref=f3e201]:
+          - generic [ref=f3e202]: Chế độ luyện tập — bạn có thể quay lại, bỏ qua và sửa đáp án trước khi nộp.
+          - generic [ref=f3e203]: Tiến độ 0/1
+        - generic [ref=f3e204]:
+          - generic [ref=f3e205]:
+            - generic [ref=f3e206]: Đã trả lời 0/1
+            - button "☆ Đánh dấu" [ref=f3e207] [cursor=pointer]
+          - generic [ref=f3e208]: Thủ đô của Việt Nam là gì?
+        - generic [ref=f3e210]:
+          - generic [ref=f3e211] [cursor=pointer]:
+            - radio "A. Hà Nội" [checked] [active] [ref=f3e212]
+            - generic [ref=f3e213]: A.
+            - generic [ref=f3e214]: Hà Nội
+          - generic [ref=f3e215] [cursor=pointer]:
+            - radio "B. Huế" [ref=f3e216]
+            - generic [ref=f3e217]: B.
+            - generic [ref=f3e218]: Huế
+          - generic [ref=f3e219] [cursor=pointer]:
+            - radio "C. Đà Nẵng" [ref=f3e220]
+            - generic [ref=f3e221]: C.
+            - generic [ref=f3e222]: Đà Nẵng
+          - generic [ref=f3e223] [cursor=pointer]:
+            - radio "D. Cần Thơ" [ref=f3e224]
+            - generic [ref=f3e225]: D.
+            - generic [ref=f3e226]: Cần Thơ
+        - generic [ref=f3e227]:
+          - button "← Trước" [disabled]
+          - button "Nộp bài" [ref=f3e228] [cursor=pointer]
+        - generic [ref=f3e229]:
+          - generic [ref=f3e230]: Đi tới câu
+          - button "1" [ref=f3e232] [cursor=pointer]
+    - button "Mở AI" [ref=f3e86] [cursor=pointer]

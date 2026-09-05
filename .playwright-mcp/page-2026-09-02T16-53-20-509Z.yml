@@ -1,0 +1,96 @@
+- generic [ref=f2e15]:
+  - complementary [ref=f2e16]:
+    - link "Thi Thử Exam workspace" [ref=f2e17] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f2e22]:
+        - strong [ref=f2e23]: Thi Thử
+        - generic [ref=f2e24]: Exam workspace
+    - generic [ref=f2e25]: Không gian học tập
+    - navigation [ref=f2e26]:
+      - link "Dashboard" [ref=f2e27] [cursor=pointer]:
+        - /url: /
+      - link "Kho đề" [ref=f2e33] [cursor=pointer]:
+        - /url: /library
+      - link "Từ vựng" [ref=f2e37] [cursor=pointer]:
+        - /url: /vocabulary
+      - link "Chia sẻ" [ref=f2e42] [cursor=pointer]:
+        - /url: /share
+      - link "Tài khoản & hồ sơ" [ref=f2e49] [cursor=pointer]:
+        - /url: /account
+      - link "Đề chính thức" [ref=f2e54] [cursor=pointer]:
+        - /url: /official-exams
+      - link "Hướng dẫn" [ref=f2e59] [cursor=pointer]:
+        - /url: /wiki
+    - generic [ref=f2e63]:
+      - generic [ref=f2e66]:
+        - strong [ref=f2e67]: Online mode
+        - generic [ref=f2e68]: Đang kết nối Internet.
+      - link "Test Flow Hồ sơ hiện tại" [ref=f2e69] [cursor=pointer]:
+        - /url: /account
+        - generic [ref=f2e71]:
+          - strong [ref=f2e72]: Test Flow
+          - generic [ref=f2e73]: Hồ sơ hiện tại
+  - generic [ref=f2e77]:
+    - banner [ref=f2e78]:
+      - button "Đóng sidebar" [ref=f2e80] [cursor=pointer]
+      - generic [ref=f2e82]:
+        - generic [ref=f2e83]: Đã kết nối
+        - button "Đăng xuất" [ref=f2e87] [cursor=pointer]
+        - link "Test Flow" [ref=f2e88] [cursor=pointer]:
+          - /url: /account
+    - main [ref=f2e91]:
+      - generic [ref=f2e244]:
+        - generic [ref=f2e245]:
+          - button "← Chi tiết" [ref=f2e246] [cursor=pointer]
+          - generic [ref=f2e247]: Đã lưu trên thiết bị
+        - generic [ref=f2e248]:
+          - textbox [ref=f2e249]: Đề mẫu — Lịch sử Việt Nam
+          - generic [ref=f2e250]:
+            - textbox "Môn" [ref=f2e251]: Lịch sử
+            - spinbutton "Lớp" [ref=f2e252]: "12"
+            - spinbutton "Thời gian (phút)" [ref=f2e253]: "30"
+            - textbox "Mô tả" [ref=f2e254]: Đề mẫu để thử tạo và chỉnh sửa.
+        - generic [ref=f2e255]:
+          - generic [ref=f2e256]:
+            - generic [ref=f2e257]:
+              - strong [ref=f2e258]: Câu 1
+              - generic [ref=f2e259]:
+                - button "↑" [ref=f2e260] [cursor=pointer]
+                - button "↓" [ref=f2e261] [cursor=pointer]
+                - button "Xóa" [ref=f2e262] [cursor=pointer]
+            - combobox [ref=f2e263]:
+              - option "ABCD" [selected]
+              - option "TRUE / FALSE"
+              - option "SHORT ANSWER"
+            - generic [ref=f2e264]: Thủ đô của Việt Nam là gì?
+            - generic [ref=f2e266]:
+              - text: Giải thích sẵn
+              - paragraph [ref=f2e267]: Nếu điền, khi người học làm sai hệ thống sẽ dùng giải thích này thay vì gọi AI.
+              - textbox "Giải thích vì sao đáp án đúng..." [ref=f2e268]: Hà Nội là thủ đô của Việt Nam.
+            - generic [ref=f2e270]:
+              - generic [ref=f2e271]:
+                - generic [ref=f2e272]: Hình ảnh câu hỏi
+                - paragraph [ref=f2e273]: Ảnh được lưu trong máy để dùng offline và tự upload ImgBB khi có mạng.
+              - generic [ref=f2e274] [cursor=pointer]:
+                - button "Thêm hình ảnh" [ref=f2e275]
+                - text: Thêm hình ảnh
+            - spinbutton [ref=f2e276]: "1"
+            - generic [ref=f2e277]:
+              - generic [ref=f2e278]:
+                - generic [ref=f2e279]: A
+                - generic [ref=f2e280]: Hà Nội
+                - button "Đúng" [ref=f2e282] [cursor=pointer]
+              - generic [ref=f2e283]:
+                - generic [ref=f2e284]: B
+                - generic [ref=f2e285]: Huế
+                - button "Đúng" [ref=f2e287] [cursor=pointer]
+              - generic [ref=f2e288]:
+                - generic [ref=f2e289]: C
+                - generic [ref=f2e290]: Đà Nẵng
+                - button "Đúng" [ref=f2e292] [cursor=pointer]
+              - generic [ref=f2e293]:
+                - generic [ref=f2e294]: D
+                - generic [ref=f2e295]: Cần Thơ
+                - button "Đúng" [ref=f2e297] [cursor=pointer]
+          - button "+ Thêm câu" [ref=f2e298] [cursor=pointer]
+    - button "Mở AI" [ref=f2e155] [cursor=pointer]
